@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nallayil Ayurveda Staff Area</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Admin Login Overlay -->
+  <div class="auth-overlay" id="admin-auth-overlay">
+    <div class="auth-card">
+      <div class="auth-logo-badge">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <h2>Nallayil Ayurveda</h2>
+      <p>Internal editor prototype — not secure authentication</p>
+      
+      <form id="admin-login-form">
+        <div class="admin-form-group" style="text-align:left;">
+          <label class="admin-label" for="admin-username">Username</label>
+          <input type="text" id="admin-username" class="admin-input" required autocomplete="username">
+        </div>
+        <div class="admin-form-group" style="text-align:left;">
+          <label class="admin-label" for="admin-password">Password</label>
+          <input type="password" id="admin-password" class="admin-input" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" style="width:100%; padding:12px; background:#173d2a; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">
+          <i class="fas fa-sign-in-alt"></i> Access Dashboard
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="sidebar-header">
+      <div style="width:36px; height:36px; border-radius:8px; background:var(--admin-accent); color:#fff; display:flex; align-items:center; justify-content:center;">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <div class="sidebar-brand">
+        <h3>NALLAYIL <span>AYURVEDA</span></h3>
+        <small>Control Center</small>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-link active" data-tab="dashboard">
+        <i class="fas fa-chart-line"></i>
+        <span>Dashboard Overview</span>
+      </div>
+      <div class="sidebar-link" data-tab="bookings">
+        <i class="fas fa-calendar-check"></i>
+        <span>Slot Bookings</span>
+      </div>
+      <div class="sidebar-link" data-tab="gallery">
+        <i class="fas fa-images"></i>
+        <span>Upload Gallery</span>
+      </div>
+      <div class="sidebar-link" data-tab="offers">
+        <i class="fas fa-tags"></i>
+        <span>Promotional Offers</span>
+      </div>
+      <div style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.1); padding-top:15px;"></div>
+      <a href="../index.html" class="sidebar-link" style="color:var(--admin-accent);">
+        <i class="fas fa-globe"></i>
+        <span>View Live Website</span>
+      </a>
+      <a href="../booking.html" class="sidebar-link" target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Public Booking Page</span>
+      </a>
+      <div class="sidebar-link" onclick="resetToDemoData()" style="color:#f87171;">
+        <i class="fas fa-undo-alt"></i>
+        <span>Reset Demo Data</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:8px; height:8px; border-radius:50%; background:#22c55e;"></div>
+        <span>Clinic System Active</span>
+      </div>
+      <a href="#" id="admin-logout-btn" style="color:#f87171;" title="Sign out">Sign out</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="admin-main"><div style="background:#fff3cd;color:#513b08;padding:12px;font:14px/1.5 sans-serif">INTERNAL PROTOTYPE — data is saved in this browser only. Export gallery and offers to update the public build. Do not deploy this prototype.</div>
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h1 id="admin-page-title">Dashboard Overview</h1>
+      </div>
+      <div class="topbar-actions">
+        <a href="../index.html" class="action-btn" title="Open Public Website" style="width:auto; padding:6px 14px; gap:6px; font-weight:600; font-size:0.85rem;">
+          <i class="fas fa-eye"></i> View Live Site
+        </a>
+      </div>
+    </header>
+
+    <div class="admin-content">
+
+      <!-- TAB 1: DASHBOARD OVERVIEW -->
+      <section class="tab-panel active" id="panel-dashboard">
+        <!-- Summary Stats Grid -->
+        <div class="admin-stats-grid">
+          <div class="stat-box">
+            <div class="stat-box-icon green">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="stat-box-data">
+              <h3 id="stat-total-bookings">0</h3>
+              <p>Total Bookings</p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-box-icon gold">
+              <i class="fas fa-check-double"></i>
+            </div>
+            <div class="stat-box-data">
+              <h3 id="stat-confirmed-bookings">0</h3>
+              <p>Confirmed Slots</p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-box-icon orange">
+              <i class="fas fa-tags"></i>
+            </div>
+            <div class="stat-box-data">
+              <h3 id="stat-active-offers">0</h3>
+              <p>Active Offers</p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-box-icon blue">
+              <i class="fas fa-images"></i>
+            </div>
+            <div class="stat-box-data">
+              <h3 id="stat-total-gallery">0</h3>
+              <p>Gallery Photos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Appointments Card -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Recent Appointments</h2>
+            <button class="action-btn" onclick="document.querySelector('.sidebar-link[data-tab=\'bookings\']').click()" style="width:auto; padding:6px 12px; font-size:0.85rem; font-weight:600;">
+              View All Bookings <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="admin-card-body" style="padding:0;">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Patient Name</th>
+                    <th>Phone</th>
+                    <th>Center</th>
+                    <th>Date & Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="recent-bookings-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SLOT BOOKINGS MANAGER -->
+      <section class="tab-panel" id="panel-bookings">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Manage Appointment Bookings</h2>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button id="booking-export-btn" class="action-btn" style="width:auto; padding:8px 14px; font-weight:600; font-size:0.85rem; background:#173d2a; color:#fff;">
+                <i class="fas fa-file-excel"></i> Export CSV
+              </button>
+            </div>
+          </div>
+          <div class="admin-card-body">
+            <!-- Filter Bar -->
+            <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; gap:16px; margin-bottom:20px;">
+              <div>
+                <label class="admin-label" for="booking-search">Search Patient, Phone or ID</label>
+                <input type="text" id="booking-search" class="admin-input" placeholder="Type name, phone or reference ID...">
+              </div>
+              <div>
+                <label class="admin-label" for="booking-filter-branch">Filter by Branch</label>
+                <select id="booking-filter-branch" class="admin-select">
+                  <option value="all">All Branches</option>
+                  <option value="manjeri">Manjeri Heritage Hospital</option>
+                  <option value="perinthalmanna">Perinthalmanna Ayur Home</option>
+                  <option value="ramanattukara">Ramanattukara Clinic</option>
+                </select>
+              </div>
+              <div>
+                <label class="admin-label" for="booking-filter-status">Filter by Status</label>
+                <select id="booking-filter-status" class="admin-select">
+                  <option value="all">All Statuses</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="pending">Pending</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Full Bookings Table -->
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Patient</th>
+                    <th>Contact</th>
+                    <th>Center & Doctor</th>
+                    <th>Date & Time</th>
+                    <th>Mode</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="all-bookings-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: GALLERY UPLOAD & MANAGEMENT -->
+      <section class="tab-panel" id="panel-gallery">
+        <!-- Upload Form Card -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Upload New Hospital Photo</h2>
+            <small style="color:var(--admin-muted);">Images are automatically stored and published to the live public gallery.</small>
+          </div>
+          <div class="admin-card-body">
+            <form id="admin-gallery-form">
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                <div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">Choose Local Photo to Upload *</label>
+                    <input type="file" id="gallery-file-input" class="admin-input" accept="image/*">
+                    <small style="display:block; margin-top:4px; color:var(--admin-muted);">Supports PNG, JPG, WebP. Auto-converts to optimized preview.</small>
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="gallery-url-input">Or Paste Direct Image URL</label>
+                    <input type="url" id="gallery-url-input" class="admin-input" placeholder="https://example.com/photo.jpg">
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="gallery-title-input">Photo Title *</label>
+                    <input type="text" id="gallery-title-input" class="admin-input" placeholder="e.g. Classical Herbal Steam Bath Chamber" required>
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="gallery-category-input">Gallery Category *</label>
+                    <select id="gallery-category-input" class="admin-select" required>
+                      <option value="Facilities">Hospital Facilities & Suites</option>
+                      <option value="Treatments">Therapies in Action (Marma, Kizhi)</option>
+                      <option value="Herbal Garden">Herbal Garden & Natural Pharmacy</option>
+                      <option value="Ayur Home">Ayur Home Resort Campus</option>
+                      <option value="Clinical Care">Doctor Consultations</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="admin-label">Image Preview</label>
+                  <div class="image-preview-box" id="gallery-preview-box">
+                    <span class="preview-prompt" style="color:var(--admin-muted); font-size:0.9rem;">
+                      <i class="fas fa-image" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
+                      Select a file or enter an image URL to preview
+                    </span>
+                    <img id="gallery-preview-img" src="" alt="Preview" style="display:none;">
+                  </div>
+
+                  <div class="admin-form-group" style="margin-top:14px;">
+                    <label class="admin-label" for="gallery-desc-input">Description / Caption</label>
+                    <textarea id="gallery-desc-input" class="admin-textarea" rows="3" placeholder="Brief description of the facility or therapy shown..."></textarea>
+                  </div>
+
+                  <button type="submit" class="action-btn" style="width:100%; height:46px; background:#173d2a; color:#fff; font-weight:700; border-radius:8px;">
+                    <i class="fas fa-upload"></i> Upload & Publish to Gallery
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Current Gallery Items -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Current Published Photos</h2>
+          </div>
+          <div class="admin-card-body">
+            <div class="admin-items-grid" id="admin-gallery-items-container">
+              <!-- Populated by admin.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: OFFERS & PACKAGES MANAGER -->
+      <section class="tab-panel" id="panel-offers">
+        <!-- Create Offer Form -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Publish New Promotional Offer or Medical Camp</h2>
+            <small style="color:var(--admin-muted);">Active offers will appear on the homepage and booking dropdown.</small>
+          </div>
+          <div class="admin-card-body">
+            <form id="admin-offers-form">
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                <div>
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="offer-title-input">Offer / Package Title *</label>
+                    <input type="text" id="offer-title-input" class="admin-input" placeholder="e.g. Spine Health Free Camp & 20% Off Panchakarma" required>
+                  </div>
+
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                    <div class="admin-form-group">
+                      <label class="admin-label" for="offer-badge-input">Discount Badge Text *</label>
+                      <input type="text" id="offer-badge-input" class="admin-input" placeholder="e.g. 20% OFF / FREE OP" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                      <label class="admin-label" for="offer-code-input">Promo Code</label>
+                      <input type="text" id="offer-code-input" class="admin-input" placeholder="e.g. SPINE2026">
+                    </div>
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="offer-valid-input">Valid Till Date *</label>
+                    <input type="date" id="offer-valid-input" class="admin-input" required>
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="offer-desc-input">Offer Description & Inclusions *</label>
+                    <textarea id="offer-desc-input" class="admin-textarea" rows="4" placeholder="Detail what is covered (e.g. 7-day Abhyangam, Shirodhara, Free doctor consultation, etc.)..." required></textarea>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">Offer Banner Image (File Upload) *</label>
+                    <input type="file" id="offer-file-input" class="admin-input" accept="image/*">
+                  </div>
+
+                  <div class="admin-form-group">
+                    <label class="admin-label" for="offer-url-input">Or Banner Image URL</label>
+                    <input type="url" id="offer-url-input" class="admin-input" placeholder="https://example.com/banner.jpg">
+                  </div>
+
+                  <label class="admin-label">Banner Preview</label>
+                  <div class="image-preview-box" id="offer-preview-box">
+                    <span class="preview-prompt" style="color:var(--admin-muted); font-size:0.9rem;">
+                      <i class="fas fa-tags" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
+                      Banner preview will appear here
+                    </span>
+                    <img id="offer-preview-img" src="" alt="Offer Preview" style="display:none;">
+                  </div>
+
+                  <button type="submit" class="action-btn" style="width:100%; height:46px; background:#c28d32; color:#fff; font-weight:700; border-radius:8px; margin-top:20px;">
+                    <i class="fas fa-bullhorn"></i> Publish Promotional Offer
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Current Offers -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Current Active Offers</h2>
+          </div>
+          <div class="admin-card-body">
+            <div class="admin-items-grid" id="admin-offers-items-container">
+              <!-- Populated by admin.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script src="store.js"></script>
+  <script src="admin.js"></script><script src="export.js"></script>
+</body>
+</html>
