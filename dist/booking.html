@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Request an appointment | Nallayil Ayurveda</title><meta name="description" content="Request a consultation at Nallayil Ayurveda. Choose your preferred center, doctor and time; reception confirms your appointment on WhatsApp."><meta name="theme-color" content="#087A24"><link rel="icon" href="images/brand/nallayil-ayurveda-logo.jpg"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/premium.css"></head>
+<body><a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="container nav-container"><a href="index.html" class="brand-logo" aria-label="Nallayil Ayurveda home"><img src="images/brand/nallayil-ayurveda-logo.jpg" width="960" height="960" alt="Nallayil Ayurveda" class="brand-image"></a><nav class="nav-menu" aria-label="Main navigation"><a href="index.html" >Home</a><a href="index.html#about" >About</a><a href="treatments.html" >Treatments</a><a href="gallery.html" >Gallery</a><a href="index.html#contact" >Contact</a></nav><div class="nav-actions"><a href="booking.html" class="btn btn-outline btn-book-nav">Book Appointment <span aria-hidden="true">↗</span></a><button class="mobile-toggle icon-button" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span></button></div></div></header><div class="drawer-overlay"></div><aside id="mobile-navigation" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" inert><div class="drawer-header"><img src="images/brand/nallayil-ayurveda-logo.jpg" width="960" height="960" alt="Nallayil Ayurveda" class="brand-image"><button class="drawer-close icon-button" aria-label="Close navigation">×</button></div><nav class="drawer-nav" aria-label="Mobile navigation"><a href="index.html">Home<span aria-hidden="true">↗</span></a><a href="index.html#about">About<span aria-hidden="true">↗</span></a><a href="treatments.html">Treatments<span aria-hidden="true">↗</span></a><a href="gallery.html">Gallery<span aria-hidden="true">↗</span></a><a href="index.html#centers">Our centers<span aria-hidden="true">↗</span></a><a href="index.html#contact">Contact<span aria-hidden="true">↗</span></a></nav><a href="booking.html" class="btn btn-outline">Book Appointment</a><a href="tel:+919961003718" class="drawer-phone">+91 99610 03718</a></aside><!-- Main Booking Area -->
+  <main id="main" class="booking-section" style="padding: 72px 0 90px;">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 36px;">
+        <div class="section-tag gold"> LET’S PLAN YOUR VISIT</div>
+        <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 12px;">Your first step towards wellbeing.</h1>
+        <p style="color:var(--text-muted); max-width: 650px; margin:0 auto;">
+          Schedule your personal consultation at Manjeri Heritage Hospital, Perinthalmanna Ayur Home, or Ramanattukara Clinic.
+        </p>
+      </div>
+
+      <div class="booking-wizard-card">
+        <div class="wizard-header">
+          <h2>Request a personal consultation</h2>
+          <p>Choose a preferred time. Reception will confirm availability after you send your request on WhatsApp.</p>
+        </div>
+
+        <div class="wizard-body">
+          <form id="appointment-booking-form">
+            <!-- Step 1: Clinic & Doctor -->
+            <div class="form-step-title">
+              <span class="step-num">1</span>
+              <span>Select Hospital Center & Doctor</span>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label" for="booking-branch">Select Center *</label>
+                <select id="booking-branch" class="form-control" required>
+                  <option value="manjeri">Manjeri Heritage Hospital (Mullampara)</option>
+                  <option value="perinthalmanna">Perinthalmanna Ayur Home (Pattikkad)</option>
+                  <option value="ramanattukara">Ramanattukara Clinic (Kozhikode)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-doctor">Doctor / Specialist *</label>
+                <select id="booking-doctor" class="form-control" required>
+                  <option value="Any Available Specialist">Any Available Senior Specialist</option>
+                  <!-- Filled by booking.js -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-treatment">Treatment or Concern *</label>
+                <select id="booking-treatment" class="form-control" required>
+                  <!-- Filled by booking.js -->
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="booking-mode">Consultation Mode *</label>
+                <select id="booking-mode" class="form-control" required>
+                  <option value="In-Clinic Outpatient Visit">In-Clinic Outpatient Visit (OP)</option>
+                  <option value="Ayur Home Residential Stay (In-Patient)">Ayur Home Residential Stay (In-Patient)</option>
+                  <option value="Online Video Consultation">Online Video Consultation (Worldwide)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-date">Date of Appointment *</label>
+                <input type="date" id="booking-date" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Step 2: Time Slots Matrix -->
+            <div class="form-step-title" style="margin-top: 30px;">
+              <span class="step-num">2</span>
+              <span>Preferred Time *</span>
+            </div>
+
+            <input type="hidden" id="selected-time-slot" required>
+            <div class="slots-container" id="booking-slots-container">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Step 3: Patient Information -->
+            <div class="form-step-title" style="margin-top: 30px;">
+              <span class="step-num">3</span>
+              <span>Patient Contact Details</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="booking-name">Patient Full Name *</label>
+                <input autocomplete="name" maxlength="100" type="text" id="booking-name" class="form-control" placeholder="Enter patient's name" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-phone">Mobile Number (WhatsApp) *</label>
+                <input autocomplete="tel" maxlength="22" type="tel" id="booking-phone" class="form-control" placeholder="e.g. +91 99610 03718" required>
+              </div>
+            </div>
+<p class="privacy-note">Your details stay on this page until you choose to share them on WhatsApp. Only the appointment details needed by reception are included; please discuss medical reports directly with your physician.</p><p id="booking-error" role="alert" class="form-error"></p><div style="text-align:center; margin-top:36px;">
+              <button type="submit" class="btn btn-gold btn-lg" style="max-width:100%;">
+                 Review Appointment Request
+              </button>
+              <div style="margin-top:14px; font-size:0.85rem; color:var(--text-muted);">
+                 No payment is collected online. Reception will confirm the consultation details.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirmation Receipt Modal -->
+  <div class="modal" id="booking-receipt-modal" role="dialog" aria-modal="true" aria-label="Review appointment request" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:var(--primary-dark); font-size:1.35rem;"> Your request is ready</h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="booking-slip">
+          <div class="slip-header">
+            <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase;">Nallayil Ayurveda Appointment Request</div>
+            <div class="slip-ref-code" id="receipt-ref">—</div>
+            <div style="font-size:0.8rem; color:var(--success); font-weight:700;"> Awaiting reception confirmation</div>
+          </div>
+          <div class="slip-grid">
+            <div class="slip-row">
+              <span class="slip-label">Patient Name</span>
+              <span class="slip-value" id="receipt-patient">-</span>
+            </div>
+            <div class="slip-row">
+              <span class="slip-label">Phone</span>
+              <span class="slip-value" id="receipt-phone">-</span>
+            </div>
+            <div class="slip-row">
+              <span class="slip-label">Branch Center</span>
+              <span class="slip-value" id="receipt-branch">-</span>
+            </div>
+            <div class="slip-row">
+              <span class="slip-label">Consulting Doctor</span>
+              <span class="slip-value" id="receipt-doctor">-</span>
+            </div>
+            <div class="slip-row">
+              <span class="slip-label">Appointment Time</span>
+              <span class="slip-value" id="receipt-datetime">-</span>
+            </div>
+            <div class="slip-row">
+              <span class="slip-label">Specialty Concern</span>
+              <span class="slip-value" id="receipt-treatment">-</span>
+            </div>
+            <div class="slip-row" style="grid-column: 1/-1;">
+              <span class="slip-label">Consultation Mode</span>
+              <span class="slip-value" id="receipt-mode">-</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.85rem; color:var(--text-muted); text-align:center; margin-bottom:20px;">
+          Your request has not been sent yet. Select “Send request on WhatsApp” below, then send the message to reception. Your appointment is confirmed only when reception replies.
+        </p>
+
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a id="receipt-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">
+             Send request on WhatsApp
+          </a>
+          <button id="print-request" class="btn btn-primary btn-sm">
+             Print Request
+          </button>
+          <a href="index.html" class="btn btn-outline btn-sm">Return to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer"><div class="container footer-top"><div><a class="brand-logo" href="index.html"><img src="images/brand/nallayil-ayurveda-logo.jpg" width="960" height="960" alt="Nallayil Ayurveda" class="brand-image"></a><p>Traditional wisdom.<br>Thoughtful care. Naturally.</p></div><div><h3>Discover Nallayil</h3><a href="index.html#about">Our approach</a><a href="treatments.html">Treatments</a><a href="gallery.html">Gallery</a><a href="index.html#doctors">Our physicians</a><a href="index.html#offers">Wellness programmes</a></div><div><h3>We’re here to help</h3><a href="tel:+919961003718">+91 99610 03718</a><a href="mailto:manjeri@nallayilayurveda.com">manjeri@nallayilayurveda.com</a><a href="https://wa.me/919961003718" target="_blank" rel="noopener">Talk to us on WhatsApp ↗</a><a href="booking.html">Request an appointment</a></div></div><div class="container footer-bottom"><span>© 2026 Nallayil Ayurveda Hospital &amp; Ayur Home</span><span>Manjeri · Perinthalmanna · Ramanattukara</span></div></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
