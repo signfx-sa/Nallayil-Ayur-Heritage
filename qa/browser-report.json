@@ -1,0 +1,223 @@
+{
+  "layout": [
+    {
+      "file": "index.html",
+      "width": 320,
+      "scroll": 320,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 375,
+      "scroll": 375,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 414,
+      "scroll": 414,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 480,
+      "scroll": 480,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 768,
+      "scroll": 768,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 1024,
+      "scroll": 1024,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 1280,
+      "scroll": 1280,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 1440,
+      "scroll": 1440,
+      "overflows": []
+    },
+    {
+      "file": "index.html",
+      "width": 1920,
+      "scroll": 1920,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 320,
+      "scroll": 320,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 375,
+      "scroll": 375,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 414,
+      "scroll": 414,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 480,
+      "scroll": 480,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 768,
+      "scroll": 768,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 1024,
+      "scroll": 1024,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 1280,
+      "scroll": 1280,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 1440,
+      "scroll": 1440,
+      "overflows": []
+    },
+    {
+      "file": "treatments.html",
+      "width": 1920,
+      "scroll": 1920,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 320,
+      "scroll": 320,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 375,
+      "scroll": 375,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 414,
+      "scroll": 414,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 480,
+      "scroll": 480,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 768,
+      "scroll": 768,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 1024,
+      "scroll": 1024,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 1280,
+      "scroll": 1280,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 1440,
+      "scroll": 1440,
+      "overflows": []
+    },
+    {
+      "file": "gallery.html",
+      "width": 1920,
+      "scroll": 1920,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 320,
+      "scroll": 320,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 375,
+      "scroll": 375,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 414,
+      "scroll": 414,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 480,
+      "scroll": 480,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 768,
+      "scroll": 768,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 1024,
+      "scroll": 1024,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 1280,
+      "scroll": 1280,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 1440,
+      "scroll": 1440,
+      "overflows": []
+    },
+    {
+      "file": "booking.html",
+      "width": 1920,
+      "scroll": 1920,
+      "overflows": []
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "checks": "Treatments, gallery, lightbox, drawer, FAQ, testimonials, request validation/receipt, WhatsApp URL, no patient persistence, reduced motion, WebGL fallback, staff exclusion."
+}
