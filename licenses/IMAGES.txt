@@ -1,9 +1,0 @@
-Image provenance
-
-The Nallayil logo and massage-ritual.jpg were present in the supplied extracted project. The logo has not been modified. WebP files are optimized versions of the supplied/source photography.
-
-Editorial photos were already referenced by the original js/data.js. Original source URLs use https://images.unsplash.com/ followed by the photo identifier in the images/editorial filenames. No stock portrait is displayed as a named Nallayil physician or patient.
-
-The public gallery identifies its photos as illustrative, rather than actual Nallayil premises. Clinic-specific photographs and publication permissions are the site owner’s responsibility.
-
-ritual-fallback.svg is an original code-drawn illustration for this redesign. The Three.js still life is original procedural geometry.
