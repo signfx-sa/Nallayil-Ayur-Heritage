@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Nallayil Ayurveda Heritage Hospital & Ayur Home • Manjeri</title>
+  <meta name="description" content="Learn about Nallayil Ayurveda Heritage Hospital & Ayur Home in Mullampara, Manjeri. Our medical heritage, holistic healing philosophy, doctors, and inpatient facilities.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@600;700;800&family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .page-hero {
+      padding: 140px 0 65px;
+      background: linear-gradient(180deg, #0b2216 0%, #143322 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #E2E8E4;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      margin-bottom: 14px;
+      color: #fefae0;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: rgba(254, 250, 224, 0.85);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .about-main-section {
+      padding: 80px 0 90px;
+      background: #fbf9f4;
+    }
+
+    .about-story-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    @media (max-width: 900px) {
+      .about-story-row {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+    .about-story-text h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      color: #143322;
+      margin-bottom: 18px;
+    }
+    .about-story-text p {
+      font-size: 1rem;
+      color: #4a5d4e;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .about-img-box {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(20, 51, 34, 0.12);
+      border: 3px solid #ffffff;
+    }
+    .about-img-box img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .value-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(20, 51, 34, 0.05);
+      border: 1px solid rgba(20, 51, 34, 0.07);
+    }
+    .value-icon {
+      font-size: 1.8rem;
+      color: #087A24;
+      margin-bottom: 14px;
+    }
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #143322;
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      font-size: 0.92rem;
+      color: #4a5d4e;
+      line-height: 1.6;
+    }
+
+    .facilities-section {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 50px 40px;
+      margin-top: 70px;
+      box-shadow: 0 12px 35px rgba(20, 51, 34, 0.06);
+      border: 1px solid rgba(20, 51, 34, 0.08);
+    }
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .facility-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #fbf9f4;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(20, 51, 34, 0.06);
+    }
+    .facility-item i {
+      color: #143322;
+      font-size: 1.4rem;
+      margin-top: 3px;
+    }
+    .facility-item h4 {
+      margin: 0 0 6px;
+      color: #143322;
+      font-size: 1.05rem;
+    }
+    .facility-item p {
+      margin: 0;
+      color: #4a5d4e;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .cta-banner-box {
+      margin-top: 70px;
+      background: linear-gradient(135deg, #143322 0%, #1e4a33 100%);
+      border-radius: 24px;
+      padding: 50px 40px;
+      color: #fefae0;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(20, 51, 34, 0.15);
+    }
+    .cta-banner-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #fefae0;
+    }
+    .cta-banner-box p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: rgba(254, 250, 224, 0.85);
+      font-size: 1.05rem;
+    }
+    .cta-banner-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary-booking {
+      background: #087A24;
+      color: #143322;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-primary-booking:hover {
+      background: #E2E8E4;
+      transform: translateY(-2px);
+    }
+    .btn-light-outline {
+      background: transparent;
+      color: #fefae0;
+      border: 1.5px solid rgba(254, 250, 224, 0.6);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-light-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fefae0;
+      transform: translateY(-2px);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="inner-page">
+  <div class="content-layer">
+
+    <!-- Floating Liquid Glass Header with Integrated Smooth Expanding Mobile Menu -->
+    <header class="site-header liquid-glass compact-glass" id="navbar">
+      <div class="container nav-container">
+        
+        <!-- Logo with refined arrangement -->
+        <a href="index.html" class="brand-logo" aria-label="Nallayil Ayurveda Home">
+          <div class="brand-emblem-wrap">
+            <img src="images/nallayil logo.jpg" onerror="this.onerror=null; this.src='img/nallayil-logo.jpg';" alt="Nallayil Ayurveda Emblem" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name"><span class="brand-name-part1">NALLAYIL</span> <span class="brand-name-part2">AYURVEDA</span></span>
+            <span class="brand-tagline">HOSPITAL &amp; AYUR HOME • KERALA</span>
+          </div>
+        </a>
+
+        <!-- Slender Clean Menu Links (Desktop) Directly linking to dedicated pages -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link ">Home</a>
+          <a href="about.html" class="nav-link active">About Us</a>
+          <a href="treatments.html" class="nav-link ">Treatments</a>
+          <a href="journal.html" class="nav-link ">Ayurveda Journal (Blog)</a>
+          <a href="contact.html" class="nav-link ">Contact Us</a>
+        </nav>
+
+        <!-- Right Header CTA: Book Now + Animated Hamburger -->
+        <div class="nav-actions">
+          <a href="booking.html" class="btn btn-header-cta ">
+            Book Now
+          </a>
+          <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+            <span class="hamburger-bar bar-1"></span>
+            <span class="hamburger-bar bar-2"></span>
+            <span class="hamburger-bar bar-3"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Integrated Expanding Mobile Menu (Hidden by default, shown ONLY when hamburger clicked on mobile) -->
+      <div class="mobile-expanded-menu" id="mobileExpandedMenu">
+        <div class="mobile-expanded-divider"></div>
+        <nav class="mobile-expanded-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="mobile-nav-link "><span>Home</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="about.html" class="mobile-nav-link active"><span>About Us</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="treatments.html" class="mobile-nav-link "><span>Treatments</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="journal.html" class="mobile-nav-link "><span>Ayurveda Journal (Blog)</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="contact.html" class="mobile-nav-link "><span>Contact Us</span> <i class="fas fa-chevron-right"></i></a>
+        </nav>
+        <div class="mobile-expanded-footer">
+          <a href="https://wa.me/919447638838" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="tel:+919447638838" class="mobile-call-btn">
+            <i class="fas fa-phone-alt"></i> Call Hospital Desk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-tag">Our Living Heritage</span>
+        <h1>About Nallayil Ayurveda</h1>
+        <p>A tradition of healing born in Kerala, dedicated to restoring harmony in mind, body, and spirit through classical Ayurvedic medical wisdom and genuine human empathy.</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="about-main-section">
+      <div class="container">
+
+        <!-- Story Row -->
+        <div class="about-story-row">
+          <div class="about-story-text">
+            <span style="font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #087A24; display: block; margin-bottom: 8px;">The Healing Journey</span>
+            <h2>Ancient Foundations, Modern Clinical Standards</h2>
+            <p>
+              Located in the peaceful town of Mullampara, Manjeri, <strong>Nallayil Ayurveda Heritage Hospital &amp; Ayur Home</strong> was founded with an unyielding commitment: to practice Ayurveda in its purest, most authentic classical form, while maintaining the highest diagnostic rigour of modern medicine.
+            </p>
+            <p>
+              Under the guidance of experienced Ayurvedic physicians and Marma Chikitsa masters, our hospital has become a beacon of non-surgical recovery for disc herniation, sciatica, osteoarthritis, stroke rehabilitation, and chronic lifestyle disorders.
+            </p>
+            <p>
+              We view healing not as a temporary suppression of symptoms, but as a deep recalibration of your biological Agni (digestive fire) and Tridoshas (Vata, Pitta, Kapha).
+            </p>
+          </div>
+
+          <div class="about-img-box">
+            <img src="images/about-nallayil.jpg" onerror="this.onerror=null; this.src='images/about-nallayil.jpeg';" alt="Nallayil Ayurveda Sanctuary" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 4 Core Guiding Pillars / Values -->
+        <div style="text-align: center; margin-top: 40px;">
+          <span style="font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #087A24;">Our Guiding Principles</span>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #143322; margin-top: 8px;">What Defines Nallayil</h2>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Shuddhata (Purity)</h3>
+            <p>We source only pure, pesticide-free, wild-crafted herbs and prepare classical Kashayams in traditional brass and clay vessels to preserve maximum prana and medicinal potency.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-heart"></i></div>
+            <h3>Karuna (Compassion)</h3>
+            <p>Every patient is heard with patience and treated like family. Our physicians dedicate ample consultation time to listen to your entire health journey and emotional well-being.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-stethoscope"></i></div>
+            <h3>Nischayam (Diagnostic Precision)</h3>
+            <p>We integrate classical Ashtasthana Pariksha (eight-fold examination including pulse diagnosis) with contemporary MRI scans and blood tests for foolproof clinical diagnosis.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-home"></i></div>
+            <h3>Sukhada (Ayur Home Sanctuary)</h3>
+            <p>Our inpatient Ayur Home rooms provide a serene, tranquil haven where peaceful sleep, Ayurvedic organic nutrition, and meditative silence speed up cellular regeneration.</p>
+          </div>
+        </div>
+
+        <!-- Facilities & Infrastructure -->
+        <div class="facilities-section">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.9rem; color: #143322; text-align: center; margin-bottom: 10px;">Our Hospital Campus &amp; Infrastructure</h2>
+          <p style="text-align: center; color: #4a5d4e; max-width: 650px; margin: 0 auto;">Equipped with comprehensive facilities designed for comfortable long-stay inpatient recoveries and outpatient consultations.</p>
+
+          <div class="facilities-grid">
+            <div class="facility-item">
+              <i class="fas fa-bed"></i>
+              <div>
+                <h4>Inpatient (IP) Ayur Home Rooms</h4>
+                <p>Comfortable, air-conditioned and non-AC patient suites with en-suite bathrooms, serene natural light, and companion accommodation.</p>
+              </div>
+            </div>
+
+            <div class="facility-item">
+              <i class="fas fa-hot-tub"></i>
+              <div>
+                <h4>Classical Panchakarma Theatres</h4>
+                <p>Private, hygienic therapy suites furnished with authentic medicinal Neem and Jackfruit wood Dhronis and copper Shirodhara vessels.</p>
+              </div>
+            </div>
+
+            <div class="facility-item">
+              <i class="fas fa-mortar-pestle"></i>
+              <div>
+                <h4>In-House Ayurvedic Pharmacy</h4>
+                <p>Fully stocked with classical Arishtams, Asavams, Ghrithams, Tailams, and fresh decoctions formulated according to authentic pharmacopoeia.</p>
+              </div>
+            </div>
+
+            <div class="facility-item">
+              <i class="fas fa-utensils"></i>
+              <div>
+                <h4>Customized Pathya Diet Kitchen</h4>
+                <p>Nutritious, organic Ayurvedic meals prepared fresh daily, strictly customized according to each patient's doctor-prescribed dietary rules.</p>
+              </div>
+            </div>
+
+            <div class="facility-item">
+              <i class="fas fa-user-nurse"></i>
+              <div>
+                <h4>24/7 Nursing &amp; Medical Care</h4>
+                <p>Round-the-clock attending medical staff, senior physician rounds, emergency assistance, and personalized therapy scheduling.</p>
+              </div>
+            </div>
+
+            <div class="facility-item">
+              <i class="fas fa-parking"></i>
+              <div>
+                <h4>Peaceful Campus &amp; Parking</h4>
+                <p>Spacious, tree-lined premises in Mullampara, Manjeri, away from highway noise, featuring ample parking space and easy wheelchair access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-banner-box">
+          <h2>Begin Your Healing Journey With Us</h2>
+          <p>Schedule a personal one-on-one consultation with our Chief Ayurvedic Physician to chart out your tailored recovery plan.</p>
+          <div class="cta-banner-btns">
+            <a href="booking.html" class="btn-primary-booking"><i class="fas fa-calendar-check"></i> Book an Appointment</a>
+            <a href="treatments.html" class="btn-light-outline"><i class="fas fa-spa"></i> Explore Treatments</a>
+            <a href="contact.html" class="btn-light-outline"><i class="fas fa-map-marker-alt"></i> Contact Hospital</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    
+
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+    <!-- ======================================================================
+         SECTION 9 — PREMIER AYURVEDA FOOTER (UPDATED SPECIFICATION)
+         ====================================================================== -->
+    <footer class="site-footer-v2">
+      <div class="container">
+        
+        <!-- 4-Column Split Layout -->
+        <div class="footer-v2-grid">
+          
+          <!-- Column 1 — Nallayil Ayurveda -->
+          <div class="footer-v2-col">
+            <a href="index.html" class="footer-v2-brand-logo">
+              <div class="footer-v2-emblem">
+                <img src="images/nallayil logo.jpg" onerror="this.onerror=null; this.src='img/nallayil-logo.jpg';" alt="Nallayil Ayurveda" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div>
+                <div class="footer-v2-brand-title">Nallayil Ayurveda</div>
+                <div class="footer-v2-brand-sub">Hospital &amp; Ayur Home • Kerala</div>
+              </div>
+            </a>
+            <p class="footer-v2-statement">
+              “Rooted in Kerala’s Ayurvedic tradition, Nallayil Ayurveda brings authentic healing and personalised care for modern well-being.”
+            </p>
+            <div class="footer-v2-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2 — Quick Links -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Quick Links</h4>
+            <ul class="footer-v2-links">
+              <li><a href="about.html" class="footer-v2-link">About Us</a></li>
+              <li><a href="treatments.html" class="footer-v2-link">Treatments</a></li>
+              <li><a href="journal.html" class="footer-v2-link">Ayurveda Journal</a></li>
+              <li><a href="javascript:void(0)" onclick="openCareOfferModal()" class="footer-v2-link">Offers &amp; Updates</a></li>
+              <li><a href="contact.html" class="footer-v2-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 — Treatments (CMS-driven list) -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Treatments</h4>
+            <ul class="footer-v2-links" id="footerTreatmentsList">
+              <li><a href="treatments.html#panchakarma" class="footer-v2-link">Panchakarma Detox</a></li>
+              <li><a href="treatments.html#abhyanga" class="footer-v2-link">Abhyanga Full-Body Rejuvenation</a></li>
+              <li><a href="treatments.html#shirodhara" class="footer-v2-link">Shirodhara Mind Therapy</a></li>
+              <li><a href="treatments.html#kizhi" class="footer-v2-link">Kizhi &amp; Potali Joint Care</a></li>
+              <li><a href="treatments.html#marma" class="footer-v2-link">Marma Spine &amp; Disc Care</a></li>
+            </ul>
+            <a href="treatments.html" class="footer-v2-cta-link">
+              <span>View All Treatments</span> <span style="font-size:1.1rem;">→</span>
+            </a>
+          </div>
+
+          <!-- Column 4 — Contact -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Contact</h4>
+            <ul class="footer-v2-contact-list">
+              <li class="footer-v2-contact-item">
+                <i class="far fa-calendar-check"></i>
+                <div>
+                  <a href="contact.html#booking-sheet" style="font-weight:600; color:#4ADE80;">Book an Appointment → Booking Sheet</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <a href="https://maps.google.com/?q=NALLAYIL+AYUREDA+HERITAGE" target="_blank" rel="noopener noreferrer">Mullampara, Manjeri, Malappuram, Kerala 676121 (Google Maps)</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <a href="tel:+919447638838">+91 94476 38838</a> / <a href="tel:+919961003718">+91 99610 03718</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more" target="_blank" rel="noopener noreferrer">WhatsApp Chat Support</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-envelope"></i>
+                <div>
+                  <a href="mailto:care@nallayilayurveda.com">care@nallayilayurveda.com</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-clock"></i>
+                <div>
+                  Mon - Sun: 08:30 AM - 08:00 PM<br>
+                  <span style="font-size:0.8rem; color:#4ADE80;">24/7 Round the Clock In-Patient Care</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Bar (Left, Center, Right) -->
+        <div class="footer-v2-bottom-bar">
+          <div class="footer-v2-bottom-grid">
+            <div class="footer-v2-copy">
+              &copy; 2026 Nallayil Ayurveda. All Rights Reserved.
+            </div>
+            <div class="footer-v2-legal">
+              <a href="contact.html">Privacy Policy</a> | <a href="contact.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-v2-brandb-credit">
+              Website crafted by <span>Brand B</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Very Bottom Line -->
+        <div class="footer-v2-very-bottom">
+          Made with care for better well-being. 🌿
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- ======================================================================
+         🌿 NALLAYIL CARE — FLOATING UI SYSTEM
+         ====================================================================== -->
+    <div class="nallayil-care-widget" id="nallayilCareWidget">
+      
+      <!-- Expanded Menu Items (Appear vertically above trigger) -->
+      <div class="nallayil-care-menu" id="nallayilCareMenu">
+        
+        <!-- Smart Offer Button (Rendered only when active offer exists in CMS) -->
+        <button type="button" class="care-action-btn btn-act-offer" id="careOfferBtn" onclick="openCareOfferModal()" style="display:none;">
+          <i class="fas fa-gift"></i>
+          <span>Offer <span class="care-offer-pulse">NEW</span></span>
+        </button>
+
+        <!-- Call Button -->
+        <a href="tel:+919447638838" class="care-action-btn btn-act-call" onclick="closeCareMenu()">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Desk</span>
+        </a>
+
+        <!-- Book Appointment Button -->
+        <a href="contact.html#booking-sheet" class="care-action-btn btn-act-book" onclick="closeCareMenu()">
+          <i class="far fa-calendar-check"></i>
+          <span>Book Appointment</span>
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more%20about%20treatments" target="_blank" rel="noopener noreferrer" class="care-action-btn btn-act-wa" onclick="closeCareMenu()">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp Chat</span>
+        </a>
+
+      </div>
+
+      <!-- Main Floating Action Trigger Button (Bottom-Right Fixed) -->
+      <button type="button" class="nallayil-care-trigger" id="nallayilCareTrigger" onclick="toggleCareMenu()" aria-label="Toggle Nallayil Care Menu">
+        <div class="care-headset-icon">
+          <i class="fas fa-headset" id="careTriggerIcon"></i>
+        </div>
+        <div class="care-trigger-text">
+          <span class="care-brand-tag">Support &amp; Booking</span>
+          <span class="care-title">Nallayil Care</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Smart Offer Modal / Bottom Sheet -->
+    <div class="care-offer-modal-overlay" id="careOfferModalOverlay" onclick="handleOfferOverlayClick(event)">
+      <div class="care-offer-card" id="careOfferCard">
+        <button type="button" class="care-offer-close" onclick="closeCareOfferModal()" aria-label="Close Offer">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="care-offer-media" id="careOfferMedia">
+          <img src="images/card-wellness.jpg" alt="Special Ayurvedic Offer" id="careOfferImg">
+        </div>
+        <div class="care-offer-body">
+          <span class="care-offer-badge">SPECIAL OFFER</span>
+          <h3 class="care-offer-title" id="careOfferTitle">Monsoon Panchakarma Rejuvenation</h3>
+          <p class="care-offer-desc" id="careOfferDesc">
+            Avail 15% complimentary wellness enhancement on our classical 14-day residential Panchakarma packages at Manjeri Ayur Home.
+          </p>
+          <a href="contact.html#booking-sheet" class="care-offer-cta" onclick="closeCareOfferModal()">
+            <span>Book Your Offer Slot</span> <span style="font-size:1.1rem;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="pouchGlow" cx="40%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F4EEDD"/>
+      <stop offset="90%" stop-color="#E3D5BE"/>
+      <stop offset="100%" stop-color="#CBBBA0"/>
+    </radialGradient>
+    <linearGradient id="oilSeep" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#C99222" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#DDAA33" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E5B544" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A67C24"/>
+      <stop offset="100%" stop-color="#5E430F"/>
+    </linearGradient>
+    <linearGradient id="leafGradKizhi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68C62A"/>
+      <stop offset="50%" stop-color="#45B51B"/>
+      <stop offset="100%" stop-color="#087A24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft Shadow -->
+  <ellipse cx="200" cy="350" rx="110" ry="22" fill="#D0DDD0" opacity="0.6" />
+
+  <!-- Botanical Leaves on Treatment Mat -->
+  <g transform="translate(80, 310) rotate(-25)">
+    <path d="M0 0 C30 -20, 70 -15, 90 10 C60 25, 20 20, 0 0 Z" fill="url(#leafGradKizhi)" />
+    <path d="M0 0 C45 0, 75 5, 90 10" stroke="#065418" stroke-width="1.5" fill="none" />
+  </g>
+  <g transform="translate(220, 320) rotate(15)">
+    <path d="M0 0 C25 -15, 60 -10, 75 10 C50 20, 15 15, 0 0 Z" fill="url(#leafGradKizhi)" />
+    <path d="M0 0 C35 0, 60 5, 75 10" stroke="#065418" stroke-width="1.2" fill="none" />
+  </g>
+
+  <!-- Kizhi Linen Pouch Main Body -->
+  <path d="M120 270 
+           C110 320, 140 345, 200 345 
+           C260 345, 290 320, 280 270 
+           C270 220, 240 210, 222 200 
+           L178 200 
+           C160 210, 130 220, 120 270 Z" 
+        fill="url(#pouchGlow)" 
+        stroke="#C7B49B" 
+        stroke-width="1.5" />
+
+  <!-- Medicated Warm Herbal Oil Seep at Bottom -->
+  <path d="M124 285 
+           C120 325, 145 345, 200 345 
+           C255 345, 280 325, 276 285 
+           C260 320, 240 335, 200 335 
+           C160 335, 140 320, 124 285 Z" 
+        fill="url(#oilSeep)" />
+
+  <!-- Tied Linen Cord -->
+  <rect x="170" y="192" width="60" height="14" rx="4" fill="url(#cordGrad)" />
+  <line x1="170" y1="196" x2="230" y2="196" stroke="#F5D77F" stroke-width="1" opacity="0.6" />
+  <line x1="170" y1="202" x2="230" y2="202" stroke="#5E430F" stroke-width="1" />
+
+  <!-- Flared Top Fabric / Handle -->
+  <path d="M176 192 
+           C165 150, 140 120, 150 95 
+           C165 110, 185 140, 195 185 
+           L205 185 
+           C215 140, 235 110, 250 95 
+           C260 120, 235 150, 224 192 Z" 
+        fill="url(#pouchGlow)" 
+        stroke="#C7B49B" 
+        stroke-width="1" />
+
+  <!-- Organic Folds and Creases -->
+  <path d="M185 192 C180 230, 175 260, 160 300" stroke="#D3C4AF" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  <path d="M215 192 C220 230, 225 260, 240 300" stroke="#D3C4AF" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  <path d="M200 195 C200 240, 198 280, 200 320" stroke="#D3C4AF" stroke-width="1" fill="none" stroke-linecap="round" />
+</svg>

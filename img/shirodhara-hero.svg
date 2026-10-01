@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shiroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F9FAF6"/>
+      <stop offset="100%" stop-color="#EDF4EA"/>
+    </linearGradient>
+
+    <!-- Warm Daylight -->
+    <radialGradient id="shiroSun" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFF9E8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#F0F7EC" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E3EDE0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Brass Vessel Gradient -->
+    <linearGradient id="potBrass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE794"/>
+      <stop offset="30%" stop-color="#E5B842"/>
+      <stop offset="65%" stop-color="#B8861B"/>
+      <stop offset="90%" stop-color="#7A5005"/>
+      <stop offset="100%" stop-color="#472D02"/>
+    </linearGradient>
+
+    <!-- Golden Medicated Herbal Oil -->
+    <linearGradient id="streamOil" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="35%" stop-color="#FFA000"/>
+      <stop offset="70%" stop-color="#FF8F00"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+
+    <!-- Teak Wood Table -->
+    <linearGradient id="tableTeak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8D5B28"/>
+      <stop offset="50%" stop-color="#633B14"/>
+      <stop offset="100%" stop-color="#3E2209"/>
+    </linearGradient>
+
+    <!-- Patient Skin Tone in Peace -->
+    <linearGradient id="peacefulSkin" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FCE5CD"/>
+      <stop offset="40%" stop-color="#F5CBA7"/>
+      <stop offset="85%" stop-color="#E59866"/>
+      <stop offset="100%" stop-color="#BA4A00"/>
+    </linearGradient>
+
+    <linearGradient id="leafGradShiro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68C62A"/>
+      <stop offset="50%" stop-color="#45B51B"/>
+      <stop offset="100%" stop-color="#087A24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="650" fill="url(#shiroBg)"/>
+  <rect width="1000" height="650" fill="url(#shiroSun)"/>
+
+  <!-- Botanical Shadows -->
+  <g opacity="0.1" transform="translate(50, 0)">
+    <path d="M-20 0 Q100 150 20 320 Q120 180 -20 0 Z" fill="url(#leafGradShiro)"/>
+    <path d="M10 0 Q160 140 80 280 Q180 160 10 0 Z" fill="url(#leafGradShiro)"/>
+  </g>
+
+  <!-- Teak Wood Droni (Treatment Table Headrest) -->
+  <g transform="translate(150, 420)">
+    <ellipse cx="350" cy="180" rx="420" ry="35" fill="#B0C2B0" opacity="0.35" filter="blur(8px)"/>
+    <!-- Headrest Basin -->
+    <path d="M50 80 Q350 40 650 80 L620 170 Q350 190 80 170 Z" fill="url(#tableTeak)"/>
+    <!-- Curved Droni Oil Channel -->
+    <path d="M80 85 Q350 55 620 85 L600 100 Q350 75 100 100 Z" fill="#2E1605"/>
+  </g>
+
+  <!-- Serene Patient Resting in Meditation -->
+  <g transform="translate(320, 390)">
+    <!-- Soft Headrest Pillow / Towel -->
+    <ellipse cx="180" cy="110" rx="110" ry="35" fill="#FFFFFF" stroke="#E0EAE0" stroke-width="1"/>
+    <!-- Face / Head in Profile (Eyes closed, blissful tranquility) -->
+    <path d="M110 90 
+             C120 70, 150 60, 180 60 
+             C210 60, 240 75, 245 95 
+             C248 115, 235 130, 210 135 
+             C180 140, 130 135, 115 115 Z" 
+          fill="url(#peacefulSkin)"/>
+    <!-- Forehead (Ajna Chakra / Third Eye Center receiving oil) -->
+    <ellipse cx="180" cy="80" rx="22" ry="12" fill="url(#peacefulSkin)"/>
+    <!-- Closed peaceful eyelids -->
+    <path d="M155 92 Q165 98 175 92" stroke="#873600" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Peaceful lips / calm breathing -->
+    <path d="M158 115 Q168 120 178 115" stroke="#A04000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Continuous Sacred Stream of Warm Herbal Oil (Dhara) -->
+  <g transform="translate(500, 260)">
+    <path d="M0 0 Q-5 70 -1 150 Q2 180 0 210" stroke="url(#streamOil)" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.95"/>
+    <path d="M0 0 Q-5 70 -1 150 Q2 180 0 210" stroke="#FFF8E1" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <!-- Gentle Pool / Ripple at the Third Eye -->
+    <ellipse cx="0" cy="210" rx="26" ry="8" fill="#FFB300" opacity="0.8"/>
+    <ellipse cx="0" cy="210" rx="38" ry="12" fill="none" stroke="#FFD54F" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Hanging Brass Shirodhara Vessel (Dhara Patra) -->
+  <g transform="translate(500, 80)">
+    <!-- Brass Suspension Chains -->
+    <line x1="-65" y1="-80" x2="-40" y2="70" stroke="url(#potBrass)" stroke-width="2.5" stroke-dasharray="4,2"/>
+    <line x1="65" y1="-80" x2="40" y2="70" stroke="url(#potBrass)" stroke-width="2.5" stroke-dasharray="4,2"/>
+    <line x1="0" y1="-80" x2="0" y2="50" stroke="url(#potBrass)" stroke-width="2.5" stroke-dasharray="4,2"/>
+
+    <!-- Pot Top Rim -->
+    <ellipse cx="0" cy="60" rx="65" ry="14" fill="url(#potBrass)" stroke="#FFE794" stroke-width="1.5"/>
+    
+    <!-- Pot Body -->
+    <path d="M-65 60 C-65 140, -35 170, 0 180 C35 170, 65 140, 65 60 Z" fill="url(#potBrass)"/>
+    
+    <!-- Bottom Nozzle / Wick -->
+    <path d="M-8 178 L-5 195 L5 195 L8 178 Z" fill="url(#potBrass)"/>
+    <!-- Golden Droplet at Tip -->
+    <circle cx="0" cy="198" r="4" fill="#FFC107"/>
+
+    <!-- Floating Jasmine Buds inside the pot rim -->
+    <circle cx="-20" cy="58" r="4" fill="#FFFFFF"/>
+    <circle cx="15" cy="62" r="3.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Jasmine / Lotus Blossoms & Herbal Leaves on the Table -->
+  <g transform="translate(240, 480)">
+    <!-- Jasmine Blossom -->
+    <circle cx="0" cy="0" r="5" fill="#FFD54F"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="9" fill="#FFFFFF"/>
+    <ellipse cx="11" cy="-4" rx="5" ry="9" fill="#FFFFFF" transform="rotate(72 11 -4)"/>
+    <ellipse cx="7" cy="10" rx="5" ry="9" fill="#FFFFFF" transform="rotate(144 7 10)"/>
+    <ellipse cx="-7" cy="10" rx="5" ry="9" fill="#FFFFFF" transform="rotate(216 -7 10)"/>
+    <ellipse cx="-11" cy="-4" rx="5" ry="9" fill="#FFFFFF" transform="rotate(288 -11 -4)"/>
+  </g>
+
+  <!-- Floating Golden Healing Prana Sparkles -->
+  <circle cx="480" cy="340" r="3" fill="#FFC107" opacity="0.7"/>
+  <circle cx="525" cy="300" r="2.5" fill="#68C62A" opacity="0.6"/>
+  <circle cx="510" cy="440" r="2" fill="#FFD54F" opacity="0.8"/>
+</svg>

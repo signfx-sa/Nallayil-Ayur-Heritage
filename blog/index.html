@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayurveda Journal &amp; Health Insights | Nallayil Ayurveda • Manjeri, Kerala</title>
+  <meta name="description" content="Explore clinical insights, seasonal health tips, Panchakarma wisdom, and natural healing articles authored by senior Ayurvedic physicians at Nallayil Heritage Hospital.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@600;700;800&family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <style>
+    .page-hero {
+      padding: 140px 0 65px;
+      background: linear-gradient(180deg, #0b2216 0%, #143322 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #E2E8E4;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      margin-bottom: 14px;
+      color: #fefae0;
+    }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: rgba(254, 250, 224, 0.85);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .journal-content-section {
+      padding: 70px 0 90px;
+      background: #fbf9f4;
+    }
+
+    .journal-category-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+    .category-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid rgba(20, 51, 34, 0.15);
+      background: #ffffff;
+      color: #143322;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .category-btn.active, .category-btn:hover {
+      background: #143322;
+      color: #fefae0;
+      border-color: #143322;
+    }
+
+    .journal-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 32px;
+    }
+
+    .article-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(20, 51, 34, 0.05);
+      border: 1px solid rgba(20, 51, 34, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(20, 51, 34, 0.1);
+      border-color: #087A24;
+    }
+    .article-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #087A24;
+      background: rgba(8, 122, 36, 0.1);
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.38rem;
+      color: #143322;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .article-excerpt {
+      font-size: 0.95rem;
+      color: #4a5d4e;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid #eef2ed;
+      font-size: 0.85rem;
+      color: #7b8e7e;
+    }
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-author i {
+      color: #087A24;
+    }
+
+    .cta-banner-box {
+      margin-top: 70px;
+      background: linear-gradient(135deg, #143322 0%, #1e4a33 100%);
+      border-radius: 24px;
+      padding: 50px 40px;
+      color: #fefae0;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(20, 51, 34, 0.15);
+    }
+    .cta-banner-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #fefae0;
+    }
+    .cta-banner-box p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: rgba(254, 250, 224, 0.85);
+      font-size: 1.05rem;
+    }
+    .cta-banner-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary-booking {
+      background: #087A24;
+      color: #143322;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-primary-booking:hover {
+      background: #E2E8E4;
+      transform: translateY(-2px);
+    }
+    .btn-light-outline {
+      background: transparent;
+      color: #fefae0;
+      border: 1.5px solid rgba(254, 250, 224, 0.6);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-light-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fefae0;
+      transform: translateY(-2px);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="inner-page">
+  <div class="content-layer">
+
+    <!-- Floating Liquid Glass Header with Integrated Smooth Expanding Mobile Menu -->
+    <header class="site-header liquid-glass compact-glass" id="navbar">
+      <div class="container nav-container">
+        
+        <!-- Logo with refined arrangement -->
+        <a href="../index.html" class="brand-logo" aria-label="Nallayil Ayurveda Home">
+          <div class="brand-emblem-wrap">
+            <img src="../images/nallayil logo.jpg" onerror="this.onerror=null; this.src='../img/nallayil-logo.jpg';" alt="Nallayil Ayurveda Emblem" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name"><span class="brand-name-part1">NALLAYIL</span> <span class="brand-name-part2">AYURVEDA</span></span>
+            <span class="brand-tagline">HOSPITAL &amp; AYUR HOME • KERALA</span>
+          </div>
+        </a>
+
+        <!-- Slender Clean Menu Links (Desktop) Directly linking to dedicated pages -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="../index.html" class="nav-link ">Home</a>
+          <a href="../about.html" class="nav-link ">About Us</a>
+          <a href="../treatments.html" class="nav-link ">Treatments</a>
+          <a href="../journal.html" class="nav-link active">Ayurveda Journal (Blog)</a>
+          <a href="../contact.html" class="nav-link ">Contact Us</a>
+        </nav>
+
+        <!-- Right Header CTA: Book Now + Animated Hamburger -->
+        <div class="nav-actions">
+          <a href="../booking.html" class="btn btn-header-cta ">
+            Book Now
+          </a>
+          <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+            <span class="hamburger-bar bar-1"></span>
+            <span class="hamburger-bar bar-2"></span>
+            <span class="hamburger-bar bar-3"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Integrated Expanding Mobile Menu (Hidden by default, shown ONLY when hamburger clicked on mobile) -->
+      <div class="mobile-expanded-menu" id="mobileExpandedMenu">
+        <div class="mobile-expanded-divider"></div>
+        <nav class="mobile-expanded-nav" aria-label="Mobile Navigation">
+          <a href="../index.html" class="mobile-nav-link "><span>Home</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../about.html" class="mobile-nav-link "><span>About Us</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../treatments.html" class="mobile-nav-link "><span>Treatments</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../journal.html" class="mobile-nav-link active"><span>Ayurveda Journal (Blog)</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../contact.html" class="mobile-nav-link "><span>Contact Us</span> <i class="fas fa-chevron-right"></i></a>
+        </nav>
+        <div class="mobile-expanded-footer">
+          <a href="https://wa.me/919447638838" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="tel:+919447638838" class="mobile-call-btn">
+            <i class="fas fa-phone-alt"></i> Call Hospital Desk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-tag">Clinical Wisdom &amp; Articles</span>
+        <h1>Ayurveda Journal</h1>
+        <p>Insights, classical therapeutic perspectives, and lifestyle regimens authored by our senior Ayurvedic physicians in Manjeri, Kerala.</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="journal-content-section">
+      <div class="container">
+
+        <!-- Topic Badges -->
+        <div class="journal-category-bar">
+          <span class="category-btn active">All Articles</span>
+          <span class="category-btn">Spine &amp; Disc Care</span>
+          <span class="category-btn">Panchakarma Detox</span>
+          <span class="category-btn">Joint &amp; Arthritis</span>
+          <span class="category-btn">Stress &amp; Mind</span>
+          <span class="category-btn">Seasonal Wellness</span>
+        </div>
+
+        <!-- 6 In-Depth Articles Grid -->
+        <div class="journal-full-grid">
+
+          <!-- Article 1 -->
+          <article class="article-card" id="marma-spine-relief">
+            <div>
+              <span class="article-badge">Spine &amp; Disc Care</span>
+              <h2 class="article-title">The Science of Marma: Non-Surgical Relief for Spine &amp; Disc Compressions</h2>
+              <p class="article-excerpt">
+                Disc herniation, lumbar spondylosis, and sciatica need not always culminate in surgery. Discover how ancient Marma point manipulation releases trapped nerves, decompresses vertebral gaps, and triggers deep natural healing.
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Senior Marma Physician</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="article-card" id="panchakarma-cellular-detox">
+            <div>
+              <span class="article-badge">Panchakarma Detox</span>
+              <h2 class="article-title">Seasonal Panchakarma Detox: Restoring Cellular Balance &amp; Agni</h2>
+              <p class="article-excerpt">
+                Why systematic detoxification according to seasonal shifts (Ritu Sandhi) purges metabolic endotoxins (Ama), resets digestion, restores endocrine balance, and revitalizes deep tissue immunity (Ojas).
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Panchakarma Specialist</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="article-card" id="prakriti-dosha-harmony">
+            <div>
+              <span class="article-badge">Stress &amp; Mind</span>
+              <h2 class="article-title">Prakriti &amp; Dosha Harmony: Navigating Chronic Modern Stress with Daily Regimens</h2>
+              <p class="article-excerpt">
+                Constant screen exposure and mental fatigue aggravate Prana Vata and Sadhaka Pitta. Learn how simple morning Dinacharya rituals, Brahmi rasayanas, and breathwork calm autonomic hyperarousal.
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Holistic Health Desk</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="article-card" id="kizhi-potali-joint-care">
+            <div>
+              <span class="article-badge">Joint &amp; Arthritis</span>
+              <h2 class="article-title">Kizhi &amp; Potali Therapies: Soothing Joint Stiffness &amp; Osteoarthritis</h2>
+              <p class="article-excerpt">
+                How warm medicinal boluses infused with Choornams and freshly collected herbal leaves stimulate synovial circulation, lubricate degenerative cartilage, and alleviate persistent musculoskeletal pain.
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Ayurvedic Physician</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="article-card" id="shirodhara-sleep-rewire">
+            <div>
+              <span class="article-badge">Neurological Wellness</span>
+              <h2 class="article-title">Shirodhara &amp; Sleep: Rewiring the Nervous System for Deep Rest</h2>
+              <p class="article-excerpt">
+                The neuro-vascular impact of a rhythmic, continuous stream of medicated herbal oils across the Ajna chakra: clinically shown to reduce cortisol, regulate melatonin release, and resolve chronic insomnia.
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Clinical Neuro Desk</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="article-card" id="diet-ahara-medicine">
+            <div>
+              <span class="article-badge">Diet &amp; Digestion</span>
+              <h2 class="article-title">Ahara as Medicine: The Ayurvedic Principles of Eating for Your Agni</h2>
+              <p class="article-excerpt">
+                In classical Ayurveda, proper digestion precedes all pharmacological therapies. Uncover how matching your diet to your gut fire and digestive capability prevents endotoxin accumulation.
+              </p>
+            </div>
+            <div class="article-meta">
+              <span class="article-author"><i class="fas fa-user-md"></i> Dietary Consultant</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-banner-box">
+          <h2>Have Health Questions for Our Doctors?</h2>
+          <p>Book a personal diagnostic consultation at our Mullampara, Manjeri hospital and receive a personalized treatment and diet plan.</p>
+          <div class="cta-banner-btns">
+            <a href="../booking.html" class="btn-primary-booking"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+            <a href="../contact.html" class="btn-light-outline"><i class="fas fa-envelope"></i> Send an Enquiry</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    
+
+  </div>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+    <!-- ======================================================================
+         SECTION 9 — PREMIER AYURVEDA FOOTER (UPDATED SPECIFICATION)
+         ====================================================================== -->
+    <footer class="site-footer-v2">
+      <div class="container">
+        
+        <!-- 4-Column Split Layout -->
+        <div class="footer-v2-grid">
+          
+          <!-- Column 1 — Nallayil Ayurveda -->
+          <div class="footer-v2-col">
+            <a href="../index.html" class="footer-v2-brand-logo">
+              <div class="footer-v2-emblem">
+                <img src="../images/nallayil logo.jpg" onerror="this.onerror=null; this.src='../img/nallayil-logo.jpg';" alt="Nallayil Ayurveda" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div>
+                <div class="footer-v2-brand-title">Nallayil Ayurveda</div>
+                <div class="footer-v2-brand-sub">Hospital &amp; Ayur Home • Kerala</div>
+              </div>
+            </a>
+            <p class="footer-v2-statement">
+              “Rooted in Kerala’s Ayurvedic tradition, Nallayil Ayurveda brings authentic healing and personalised care for modern well-being.”
+            </p>
+            <div class="footer-v2-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2 — Quick Links -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Quick Links</h4>
+            <ul class="footer-v2-links">
+              <li><a href="../about.html" class="footer-v2-link">About Us</a></li>
+              <li><a href="../treatments.html" class="footer-v2-link">Treatments</a></li>
+              <li><a href="../journal.html" class="footer-v2-link">Ayurveda Journal</a></li>
+              <li><a href="javascript:void(0)" onclick="openCareOfferModal()" class="footer-v2-link">Offers &amp; Updates</a></li>
+              <li><a href="../contact.html" class="footer-v2-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 — Treatments (CMS-driven list) -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Treatments</h4>
+            <ul class="footer-v2-links" id="footerTreatmentsList">
+              <li><a href="../treatments.html#panchakarma" class="footer-v2-link">Panchakarma Detox</a></li>
+              <li><a href="../treatments.html#abhyanga" class="footer-v2-link">Abhyanga Full-Body Rejuvenation</a></li>
+              <li><a href="../treatments.html#shirodhara" class="footer-v2-link">Shirodhara Mind Therapy</a></li>
+              <li><a href="../treatments.html#kizhi" class="footer-v2-link">Kizhi &amp; Potali Joint Care</a></li>
+              <li><a href="../treatments.html#marma" class="footer-v2-link">Marma Spine &amp; Disc Care</a></li>
+            </ul>
+            <a href="../treatments.html" class="footer-v2-cta-link">
+              <span>View All Treatments</span> <span style="font-size:1.1rem;">→</span>
+            </a>
+          </div>
+
+          <!-- Column 4 — Contact -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Contact</h4>
+            <ul class="footer-v2-contact-list">
+              <li class="footer-v2-contact-item">
+                <i class="far fa-calendar-check"></i>
+                <div>
+                  <a href="../contact.html#booking-sheet" style="font-weight:600; color:#4ADE80;">Book an Appointment → Booking Sheet</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <a href="https://maps.google.com/?q=NALLAYIL+AYUREDA+HERITAGE" target="_blank" rel="noopener noreferrer">Mullampara, Manjeri, Malappuram, Kerala 676121 (Google Maps)</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <a href="tel:+919447638838">+91 94476 38838</a> / <a href="tel:+919961003718">+91 99610 03718</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more" target="_blank" rel="noopener noreferrer">WhatsApp Chat Support</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-envelope"></i>
+                <div>
+                  <a href="mailto:care@nallayilayurveda.com">care@nallayilayurveda.com</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-clock"></i>
+                <div>
+                  Mon - Sun: 08:30 AM - 08:00 PM<br>
+                  <span style="font-size:0.8rem; color:#4ADE80;">24/7 Round the Clock In-Patient Care</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Bar (Left, Center, Right) -->
+        <div class="footer-v2-bottom-bar">
+          <div class="footer-v2-bottom-grid">
+            <div class="footer-v2-copy">
+              &copy; 2026 Nallayil Ayurveda. All Rights Reserved.
+            </div>
+            <div class="footer-v2-legal">
+              <a href="../contact.html">Privacy Policy</a> | <a href="../contact.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-v2-brandb-credit">
+              Website crafted by <span>Brand B</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Very Bottom Line -->
+        <div class="footer-v2-very-bottom">
+          Made with care for better well-being. 🌿
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- ======================================================================
+         🌿 NALLAYIL CARE — FLOATING UI SYSTEM
+         ====================================================================== -->
+    <div class="nallayil-care-widget" id="nallayilCareWidget">
+      
+      <!-- Expanded Menu Items (Appear vertically above trigger) -->
+      <div class="nallayil-care-menu" id="nallayilCareMenu">
+        
+        <!-- Smart Offer Button (Rendered only when active offer exists in CMS) -->
+        <button type="button" class="care-action-btn btn-act-offer" id="careOfferBtn" onclick="openCareOfferModal()" style="display:none;">
+          <i class="fas fa-gift"></i>
+          <span>Offer <span class="care-offer-pulse">NEW</span></span>
+        </button>
+
+        <!-- Call Button -->
+        <a href="tel:+919447638838" class="care-action-btn btn-act-call" onclick="closeCareMenu()">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Desk</span>
+        </a>
+
+        <!-- Book Appointment Button -->
+        <a href="../contact.html#booking-sheet" class="care-action-btn btn-act-book" onclick="closeCareMenu()">
+          <i class="far fa-calendar-check"></i>
+          <span>Book Appointment</span>
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more%20about%20treatments" target="_blank" rel="noopener noreferrer" class="care-action-btn btn-act-wa" onclick="closeCareMenu()">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp Chat</span>
+        </a>
+
+      </div>
+
+      <!-- Main Floating Action Trigger Button (Bottom-Right Fixed) -->
+      <button type="button" class="nallayil-care-trigger" id="nallayilCareTrigger" onclick="toggleCareMenu()" aria-label="Toggle Nallayil Care Menu">
+        <div class="care-headset-icon">
+          <i class="fas fa-headset" id="careTriggerIcon"></i>
+        </div>
+        <div class="care-trigger-text">
+          <span class="care-brand-tag">Support &amp; Booking</span>
+          <span class="care-title">Nallayil Care</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Smart Offer Modal / Bottom Sheet -->
+    <div class="care-offer-modal-overlay" id="careOfferModalOverlay" onclick="handleOfferOverlayClick(event)">
+      <div class="care-offer-card" id="careOfferCard">
+        <button type="button" class="care-offer-close" onclick="closeCareOfferModal()" aria-label="Close Offer">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="care-offer-media" id="careOfferMedia">
+          <img src="../images/card-wellness.jpg" alt="Special Ayurvedic Offer" id="careOfferImg">
+        </div>
+        <div class="care-offer-body">
+          <span class="care-offer-badge">SPECIAL OFFER</span>
+          <h3 class="care-offer-title" id="careOfferTitle">Monsoon Panchakarma Rejuvenation</h3>
+          <p class="care-offer-desc" id="careOfferDesc">
+            Avail 15% complimentary wellness enhancement on our classical 14-day residential Panchakarma packages at Manjeri Ayur Home.
+          </p>
+          <a href="../contact.html#booking-sheet" class="care-offer-cta" onclick="closeCareOfferModal()">
+            <span>Book Your Offer Slot</span> <span style="font-size:1.1rem;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

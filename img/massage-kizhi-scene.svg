@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <!-- Soft Natural Daylight Sanctuary Gradient -->
+    <linearGradient id="sereneBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#F8F9F5"/>
+      <stop offset="80%" stop-color="#EEF4EA"/>
+      <stop offset="100%" stop-color="#E3EDE0"/>
+    </linearGradient>
+
+    <!-- Warm Morning Sunlight Glow -->
+    <radialGradient id="sunGlow" cx="75%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#FFF9E6" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#F3F9EE" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E8F2E4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Traditional Kerala Teak Wood Droni (Treatment Table) -->
+    <linearGradient id="teakWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8A5328"/>
+      <stop offset="30%" stop-color="#6E3E1A"/>
+      <stop offset="70%" stop-color="#552F12"/>
+      <stop offset="100%" stop-color="#3B1F0A"/>
+    </linearGradient>
+
+    <!-- Brass Uruli / Oil Vessel Gradient -->
+    <linearGradient id="keralaBrass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE794"/>
+      <stop offset="25%" stop-color="#E5B842"/>
+      <stop offset="60%" stop-color="#B8861B"/>
+      <stop offset="90%" stop-color="#805608"/>
+      <stop offset="100%" stop-color="#4D3202"/>
+    </linearGradient>
+
+    <!-- Warm Herbal Sesame & Murivenna Oil Gradient -->
+    <radialGradient id="herbalOilSurface" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="85%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </radialGradient>
+
+    <!-- Calming Botanical Leaf Gradient -->
+    <linearGradient id="herbGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68C62A"/>
+      <stop offset="50%" stop-color="#45B51B"/>
+      <stop offset="100%" stop-color="#087A24"/>
+    </linearGradient>
+
+    <!-- Skin Tone Gradient for Therapist's Healing Touch -->
+    <linearGradient id="gentleHands" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5CBA7"/>
+      <stop offset="50%" stop-color="#E59866"/>
+      <stop offset="100%" stop-color="#BA4A00"/>
+    </linearGradient>
+
+    <!-- Unbleached Cotton Linen Kizhi Pouch -->
+    <radialGradient id="kizhiLinen" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F7F1E1"/>
+      <stop offset="85%" stop-color="#E5DAC2"/>
+      <stop offset="100%" stop-color="#CCAFA0"/>
+    </radialGradient>
+
+    <!-- Polished Basalt Massage Stones -->
+    <radialGradient id="riverStone" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#5D6D5E"/>
+      <stop offset="60%" stop-color="#344136"/>
+      <stop offset="100%" stop-color="#1F2921"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Serene Background -->
+  <rect width="1000" height="600" fill="url(#sereneBg)"/>
+  <rect width="1000" height="600" fill="url(#sunGlow)"/>
+
+  <!-- Subtle Kerala Temple Arch / Architecture Watermark -->
+  <path d="M0 0 L1000 0 L1000 120 C850 140, 650 110, 500 130 C350 150, 150 130, 0 140 Z" fill="#087A24" opacity="0.03"/>
+
+  <!-- Floating Botanical Palms / Ferns in Background -->
+  <g opacity="0.15" transform="translate(-40, -20)">
+    <path d="M100 0 Q220 180 80 380 Q240 220 100 0 Z" fill="url(#herbGreen)"/>
+    <path d="M140 0 Q280 160 180 350 Q280 200 140 0 Z" fill="url(#herbGreen)"/>
+    <path d="M60 20 Q180 190 20 340 Q180 210 60 20 Z" fill="url(#herbGreen)"/>
+  </g>
+  <g opacity="0.12" transform="translate(820, -30) scale(-1, 1)">
+    <path d="M100 0 Q220 180 80 380 Q240 220 100 0 Z" fill="url(#herbGreen)"/>
+    <path d="M140 0 Q280 160 180 350 Q280 200 140 0 Z" fill="url(#herbGreen)"/>
+  </g>
+
+  <!-- Authentic Teak Wood Treatment Droni Surface -->
+  <g transform="translate(0, 360)">
+    <!-- Cast Shadow under Droni -->
+    <rect x="40" y="160" width="920" height="50" rx="25" fill="#B8C9B8" opacity="0.35" filter="blur(10px)"/>
+    
+    <!-- Table Body -->
+    <path d="M30 40 Q500 20 970 40 L950 170 Q500 190 50 170 Z" fill="url(#teakWood)"/>
+    <!-- Table Lip / Gutter for Medicated Oil Flow -->
+    <path d="M40 30 Q500 15 960 30 L950 50 Q500 35 50 50 Z" fill="#9C5E2D"/>
+    <path d="M50 48 Q500 32 950 48 L940 56 Q500 40 60 56 Z" fill="#42240E"/>
+  </g>
+
+  <!-- Pure White Treatment Linen Towel Under Patient / Elements -->
+  <path d="M180 375 C350 365, 650 365, 840 375 C820 450, 720 465, 200 465 Z" fill="#FFFFFF" opacity="0.95" stroke="#E5EAE2" stroke-width="1"/>
+
+  <!-- Traditional Polished River Therapy Stones -->
+  <g transform="translate(680, 360)">
+    <!-- Base Stone -->
+    <ellipse cx="50" cy="60" rx="65" ry="22" fill="url(#riverStone)"/>
+    <ellipse cx="50" cy="56" rx="55" ry="16" fill="none" stroke="#809682" stroke-width="1" opacity="0.4"/>
+    <!-- Second Stone Layer -->
+    <ellipse cx="48" cy="42" rx="48" ry="16" fill="url(#riverStone)"/>
+    <!-- Top Balancing Stone -->
+    <ellipse cx="46" cy="28" rx="34" ry="12" fill="url(#riverStone)"/>
+    <!-- Subtle Golden Oil Drop On Stones -->
+    <ellipse cx="42" cy="26" rx="5" ry="3" fill="#FFC107" opacity="0.8"/>
+  </g>
+
+  <!-- Brass Therapy Uruli (Oil Vessel) -->
+  <g transform="translate(180, 320)">
+    <!-- Uruli Shadow -->
+    <ellipse cx="120" cy="130" rx="110" ry="25" fill="#A4B8A4" opacity="0.5"/>
+    
+    <!-- Uruli Base Pedestal -->
+    <ellipse cx="120" cy="118" rx="75" ry="14" fill="#4D3202"/>
+    <ellipse cx="120" cy="115" rx="72" ry="12" fill="url(#keralaBrass)"/>
+
+    <!-- Uruli Outer Body -->
+    <path d="M30 70 C30 115, 70 120, 120 120 C170 120, 210 115, 210 70 Z" fill="url(#keralaBrass)"/>
+
+    <!-- Uruli Flared Rim -->
+    <ellipse cx="120" cy="70" rx="95" ry="28" fill="url(#keralaBrass)" stroke="#FFE794" stroke-width="2"/>
+
+    <!-- Warm Medicated Sesame Oil (Thailam) Surface -->
+    <ellipse cx="120" cy="72" rx="82" ry="23" fill="url(#herbalOilSurface)"/>
+
+    <!-- Oil Ripples -->
+    <ellipse cx="120" cy="72" rx="60" ry="16" fill="none" stroke="#FFE082" stroke-width="1.5" opacity="0.7"/>
+    <ellipse cx="120" cy="72" rx="35" ry="9" fill="none" stroke="#FFF8E1" stroke-width="1.2" opacity="0.8"/>
+
+    <!-- Floating White Jasmine / Frangipani Blossoms in the Uruli -->
+    <g transform="translate(115, 68) scale(0.7)">
+      <circle cx="0" cy="0" r="5" fill="#FFD54F"/>
+      <ellipse cx="0" cy="-12" rx="5" ry="9" fill="#FFFFFF" opacity="0.95"/>
+      <ellipse cx="11" cy="-4" rx="5" ry="9" fill="#FFFFFF" opacity="0.95" transform="rotate(72 11 -4)"/>
+      <ellipse cx="7" cy="10" rx="5" ry="9" fill="#FFFFFF" opacity="0.95" transform="rotate(144 7 10)"/>
+      <ellipse cx="-7" cy="10" rx="5" ry="9" fill="#FFFFFF" opacity="0.95" transform="rotate(216 -7 10)"/>
+      <ellipse cx="-11" cy="-4" rx="5" ry="9" fill="#FFFFFF" opacity="0.95" transform="rotate(288 -11 -4)"/>
+    </g>
+
+    <!-- Floating Fresh Green Ayurvedic Leaf in Uruli -->
+    <path d="M80 66 C70 60, 60 70, 75 76 C90 80, 85 70, 80 66 Z" fill="url(#herbGreen)"/>
+
+    <!-- Traditional Cast Brass Uruli Side Ring Handles -->
+    <path d="M22 66 C10 66, 8 78, 20 80" stroke="url(#keralaBrass)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M218 66 C230 66, 232 78, 220 80" stroke="url(#keralaBrass)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Traditional Herbal Kizhi (Therapy Poultice) #1 -->
+  <g transform="translate(390, 310)">
+    <!-- Pouch Shadow -->
+    <ellipse cx="60" cy="115" rx="50" ry="16" fill="#B0C4B0" opacity="0.5"/>
+    <!-- Pouch Base -->
+    <path d="M20 75 C10 110, 35 118, 60 118 C85 118, 110 110, 100 75 C95 45, 80 38, 70 34 L50 34 C40 38, 25 45, 20 75 Z" fill="url(#kizhiLinen)"/>
+    <!-- Medicated Warm Herbal Oil Soaking -->
+    <path d="M25 88 C20 112, 40 118, 60 118 C80 118, 100 112, 95 88 C85 106, 75 112, 60 112 C45 112, 35 106, 25 88 Z" fill="#FFA000" opacity="0.5"/>
+    <!-- Tied Cord -->
+    <rect x="46" y="32" width="28" height="8" rx="3" fill="#8D6E63"/>
+    <!-- Top Handle Fabric -->
+    <path d="M48 32 C40 10, 30 -5, 38 -20 C46 -10, 54 10, 58 30 L62 30 C66 10, 74 -10, 82 -20 C90 -5, 80 10, 72 32 Z" fill="url(#kizhiLinen)"/>
+  </g>
+
+  <!-- Traditional Herbal Kizhi #2 (Slightly tilted / in-use) -->
+  <g transform="translate(470, 325) rotate(14)">
+    <ellipse cx="55" cy="110" rx="45" ry="14" fill="#B0C4B0" opacity="0.4"/>
+    <path d="M18 70 C10 105, 32 112, 55 112 C78 112, 100 105, 92 70 C88 42, 74 35, 65 32 L45 32 C36 35, 22 42, 18 70 Z" fill="url(#kizhiLinen)"/>
+    <path d="M22 84 C18 106, 36 112, 55 112 C74 112, 92 106, 88 84 C78 102, 68 106, 55 106 C42 106, 32 102, 22 84 Z" fill="#FFA000" opacity="0.55"/>
+    <rect x="42" y="30" width="26" height="7" rx="3" fill="#8D6E63"/>
+    <path d="M44 30 C38 12, 28 -2, 36 -16 C44 -6, 50 10, 54 28 L56 28 C60 10, 66 -6, 74 -16 C82 -2, 72 12, 66 30 Z" fill="url(#kizhiLinen)"/>
+  </g>
+
+  <!-- Therapist's Healing Hands (Simulating Slow, Caring Massage Touch) -->
+  <g transform="translate(480, 230)">
+    <!-- Right Arm & Hand Reaching In with Gentle Flow -->
+    <path d="M140 -40 C110 30, 80 60, 40 85 C20 95, -10 100, -30 95 C-45 92, -50 85, -45 78 C-35 70, -10 70, 10 60 C40 45, 60 20, 80 -40 Z" fill="url(#gentleHands)" opacity="0.9" filter="drop-shadow(0 6px 12px rgba(85,47,18,0.15))"/>
+    <!-- Healing Palm touching warm Kizhi or back -->
+    <ellipse cx="-25" cy="90" rx="24" ry="14" fill="url(#gentleHands)" transform="rotate(-15 -25 90)" opacity="0.9"/>
+  </g>
+
+  <!-- Fresh Medicinal Herb Leaves & Stems Arranged Naturallly -->
+  <g transform="translate(600, 420) rotate(-15)">
+    <!-- Stem -->
+    <path d="M0 0 Q60 -20 120 -10" stroke="#065418" stroke-width="2" fill="none"/>
+    <!-- Leaves -->
+    <path d="M30 -12 C10 -25, 40 -40, 50 -16 Z" fill="url(#herbGreen)"/>
+    <path d="M60 -16 C50 -35, 80 -45, 85 -18 Z" fill="url(#herbGreen)"/>
+    <path d="M90 -14 C85 -30, 115 -35, 115 -12 Z" fill="url(#herbGreen)"/>
+  </g>
+
+  <!-- Floating Warm Amber Glow & Herbal Aroma Sparkles -->
+  <circle cx="240" cy="340" r="3" fill="#FFC107" opacity="0.8"/>
+  <circle cx="270" cy="310" r="2" fill="#68C62A" opacity="0.7"/>
+  <circle cx="420" cy="290" r="3.5" fill="#FFD54F" opacity="0.9"/>
+  <circle cx="530" cy="260" r="2.5" fill="#68C62A" opacity="0.6"/>
+  <circle cx="710" cy="320" r="2" fill="#FFC107" opacity="0.7"/>
+</svg>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Control Center | Nallayil Ayurveda Heritage Hospital</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  
+</head>
+<body class="admin-body">
+
+  <!-- ======================================================================
+       SECURITY AUTHENTICATION GATE (HIDDEN USERNAME & PASSWORD)
+       ====================================================================== -->
+  <div id="adminAuthGate">
+    <div class="auth-card">
+      <div class="auth-logo-badge">
+        <img src="images/nallayil logo.jpg" onerror="this.onerror=null; this.src='img/nallayil-logo.jpg';" alt="Emblem" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <h2 class="auth-title">Nallayil Control Center</h2>
+      <p class="auth-subtitle">Restricted Physician &amp; Hospital Management</p>
+      
+      <form id="adminAuthForm" onsubmit="event.preventDefault(); verifyAdminCredentials();">
+        <div class="auth-input-group">
+          <label class="auth-label" for="authUsernameInput">Username</label>
+          <input type="text" id="authUsernameInput" class="auth-input" placeholder="Enter username" autocomplete="username" required>
+        </div>
+        <div class="auth-input-group">
+          <label class="auth-label" for="authPasswordInput">Password</label>
+          <input type="password" id="authPasswordInput" class="auth-input" placeholder="Enter password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="auth-btn">
+          <i class="fas fa-lock-open" style="margin-right:8px;"></i> Sign In to Control Center
+        </button>
+        <div class="auth-error" id="authErrorMessage">
+          <i class="fas fa-exclamation-circle"></i> Invalid credentials. Access denied.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MAIN ADMIN DASHBOARD APP (LOCKED UNTIL AUTHENTICATED)
+       ====================================================================== -->
+  <div class="admin-wrapper" id="adminAppWrapper" style="display:none;">
+
+    <!-- Left Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-icon">
+          <img src="images/nallayil logo.jpg" onerror="this.onerror=null; this.src='img/nallayil-logo.jpg';" alt="Nallayil Emblem">
+        </div>
+        <div class="sidebar-brand-text">
+          <h2>NALLAYIL</h2>
+          <small>Control Center</small>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-link active" data-tab="dashboard">
+          <i class="fas fa-chart-line"></i>
+          <span>Dashboard Overview</span>
+        </div>
+        <div class="sidebar-link" data-tab="treatments">
+          <i class="fas fa-hand-holding-medical"></i>
+          <span>Treatments CMS</span>
+        </div>
+        <div class="sidebar-link" data-tab="journal">
+          <i class="fas fa-newspaper"></i>
+          <span>Ayurveda Journal</span>
+        </div>
+        <div class="sidebar-link" data-tab="doctors">
+          <i class="fas fa-user-md"></i>
+          <span>Doctors &amp; Booking</span>
+        </div>
+        <div class="sidebar-link" data-tab="bookings">
+          <i class="fas fa-calendar-check"></i>
+          <span>Slot Bookings</span>
+        </div>
+        <div class="sidebar-link" data-tab="offers">
+          <i class="fas fa-tags"></i>
+          <span>Offers &amp; Care</span>
+        </div>
+        <div class="sidebar-link" data-tab="gallery">
+          <i class="fas fa-images"></i>
+          <span>Upload Gallery</span>
+        </div>
+        
+        <div class="sidebar-divider"></div>
+        <a href="index.html" target="_blank" class="sidebar-link" style="color:#4ADE80;">
+          <i class="fas fa-external-link-alt"></i>
+          <span>View Public Site</span>
+        </a>
+        <a href="javascript:void(0)" onclick="adminLogout()" class="sidebar-link" style="color:#EF4444;">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sign Out</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <h1 class="topbar-title" id="pageTitle">Dashboard Overview</h1>
+          <span class="publish-status-pill" id="livePublishBadge">
+            <span class="status-dot"></span> Live Published: <span id="lastPublishedTime">Today</span>
+          </span>
+        </div>
+        <div class="admin-header-actions">
+          <button type="button" class="btn-publish-live" onclick="handlePublishToWebpage()">
+            <i class="fas fa-rocket"></i> Publish to Webpage
+          </button>
+          <button type="button" class="btn btn-outline-light" onclick="adminLogout()" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 50px; background: transparent; border: 1px solid #d8dfd5; cursor: pointer;">
+            <i class="fas fa-sign-out-alt"></i> Sign Out
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: DASHBOARD OVERVIEW -->
+      <section class="tab-panel active" id="panel-dashboard">
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-box-info">
+              <span class="stat-box-title">Total Bookings</span>
+              <strong class="stat-box-value" id="dashTotalBookings">0</strong>
+            </div>
+            <div class="stat-box-icon green"><i class="fas fa-calendar-check"></i></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-info">
+              <span class="stat-box-title">Active Treatments</span>
+              <strong class="stat-box-value" id="dashTotalTreatments">0</strong>
+            </div>
+            <div class="stat-box-icon"><i class="fas fa-hand-holding-medical"></i></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-info">
+              <span class="stat-box-title">Journal Articles</span>
+              <strong class="stat-box-value" id="dashTotalArticles">0</strong>
+            </div>
+            <div class="stat-box-icon"><i class="fas fa-newspaper"></i></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-info">
+              <span class="stat-box-title">Physicians On Duty</span>
+              <strong class="stat-box-value" id="dashTotalDoctors">0</strong>
+            </div>
+            <div class="stat-box-icon"><i class="fas fa-user-md"></i></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Recent Appointment Requests</h3>
+              <p class="card-subtitle">Latest patient booking submissions from the website</p>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="document.querySelector('.sidebar-link[data-tab=\'bookings\']').click()">
+              View All Bookings &rarr;
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Patient</th>
+                  <th>Contact</th>
+                  <th>Date &amp; Slot</th>
+                  <th>Treatment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dashBookingsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: TREATMENTS CMS -->
+      <section class="tab-panel" id="panel-treatments">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title" id="treatmentFormHeader">Add / Edit Specialized Treatment</h3>
+              <p class="card-subtitle">Edits will update on treatments.html and the booking sheet upon clicking Publish.</p>
+            </div>
+          </div>
+          
+          <form id="treatmentForm" onsubmit="event.preventDefault(); saveTreatmentData();">
+            <input type="hidden" id="treatEditId" value="">
+            
+            <div class="form-row form-row-2-unequal">
+              <div class="form-group">
+                <label class="form-label">Treatment Title (English &amp; Malayalam) *</label>
+                <input type="text" id="treatTitle" class="form-control" placeholder="e.g. Marma Chikitsa (മർമ്മ ചികിത്സ)" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category *</label>
+                <input type="text" id="treatCategory" class="form-control" placeholder="e.g. Spine &amp; Pain / Panchakarma" required>
+              </div>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Recommended Duration *</label>
+                <input type="text" id="treatDuration" class="form-control" placeholder="e.g. 7 - 21 Days" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Key Clinical Indications (Comma-separated)</label>
+                <input type="text" id="treatBenefits" class="form-control" placeholder="e.g. Trapped Nerves, Sciatica, Frozen Shoulder">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label class="form-label">Full Clinical Description *</label>
+              <textarea id="treatDesc" class="form-control" rows="3" placeholder="Explain the classical science, medicinal preparations, and physiological benefits..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Treatment Image (Upload from Computer or Paste URL)</label>
+              <div class="image-upload-wrapper">
+                <img id="treatImagePreview" src="images/card-therapies.jpg" alt="Preview" class="image-preview-thumb">
+                <div style="flex-grow:1;">
+                  <input type="text" id="treatImage" class="form-control" placeholder="images/card-marma.jpg or https://..." value="images/card-marma.jpg">
+                  <label class="upload-file-btn">
+                    <i class="fas fa-upload"></i> Choose Image from Computer
+                    <input type="file" id="treatFileInput" accept="image/*" style="display:none;" onchange="handleImageFileUpload(this, 'treatImage', 'treatImagePreview')">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px;">
+              <button type="submit" class="btn btn-primary" id="saveTreatmentBtn">
+                <i class="fas fa-save"></i> Save Treatment
+              </button>
+              <button type="button" class="btn btn-outline" id="cancelTreatEditBtn" onclick="resetTreatmentForm()" style="display:none;">
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">All Registered Specialized Treatments</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Duration</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="treatmentsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: AYURVEDA JOURNAL -->
+      <section class="tab-panel" id="panel-journal">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title" id="journalFormHeader">Publish New Journal Article</h3>
+              <p class="card-subtitle">Articles automatically sort by date. The newest 4 are dynamically featured on the home page.</p>
+            </div>
+          </div>
+          
+          <form id="journalForm" onsubmit="event.preventDefault(); saveJournalData();">
+            <input type="hidden" id="artEditId" value="">
+            
+            <div class="form-row form-row-2-unequal">
+              <div class="form-group">
+                <label class="form-label">Article Title *</label>
+                <input type="text" id="artTitle" class="form-control" placeholder="e.g. The Science of Marma Therapy" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category *</label>
+                <input type="text" id="artCategory" class="form-control" placeholder="e.g. Spine &amp; Disc Care / Panchakarma" required>
+              </div>
+            </div>
+
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label class="form-label">Published Date *</label>
+                <input type="date" id="artDate" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Author / Physician Desk *</label>
+                <input type="text" id="artAuthor" class="form-control" placeholder="e.g. Senior Marma Physician" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Read Time</label>
+                <input type="text" id="artReadTime" class="form-control" placeholder="e.g. 5 min read" value="5 min read">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label class="form-label">Article Excerpt / Summary *</label>
+              <textarea id="artExcerpt" class="form-control" rows="3" placeholder="Brief summary of the clinical insights..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Featured Article Image</label>
+              <div class="image-upload-wrapper">
+                <img id="artImagePreview" src="images/card-wellness.jpg" alt="Preview" class="image-preview-thumb">
+                <div style="flex-grow:1;">
+                  <input type="text" id="artImage" class="form-control" placeholder="images/card-marma.jpg or URL" value="images/card-wellness.jpg">
+                  <label class="upload-file-btn">
+                    <i class="fas fa-upload"></i> Choose Image from Computer
+                    <input type="file" id="artFileInput" accept="image/*" style="display:none;" onchange="handleImageFileUpload(this, 'artImage', 'artImagePreview')">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px;">
+              <button type="submit" class="btn btn-primary" id="saveArticleBtn">
+                <i class="fas fa-plus-circle"></i> Save Article
+              </button>
+              <button type="button" class="btn btn-outline" id="cancelArticleEditBtn" onclick="resetArticleForm()" style="display:none;">
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">All Published Articles (Sorted by Date)</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Title &amp; Live Status</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="articlesTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: DOCTORS & BOOKING SHEET -->
+      <section class="tab-panel" id="panel-doctors">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title" id="doctorFormHeader">Add / Edit Hospital Physician</h3>
+              <p class="card-subtitle">Physicians will appear in the consultation booking sheet dropdown.</p>
+            </div>
+          </div>
+          
+          <form id="doctorForm" onsubmit="event.preventDefault(); saveDoctorData();">
+            <input type="hidden" id="docEditId" value="">
+            
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Doctor Name &amp; Title *</label>
+                <input type="text" id="docName" class="form-control" placeholder="e.g. Dr. Muhammed Shafi Nallayil" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Qualifications *</label>
+                <input type="text" id="docQual" class="form-control" placeholder="e.g. BAMS, Chief Marma &amp; Spine Specialist" required>
+              </div>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Experience &amp; Years</label>
+                <input type="text" id="docExp" class="form-control" placeholder="e.g. 22+ Years of Clinical Excellence" value="15+ Years Experience">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Specialty Areas *</label>
+                <input type="text" id="docSpecialty" class="form-control" placeholder="e.g. Marma Chikitsa, Spine &amp; Disc Prolapse" required>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Doctor Profile Photo</label>
+              <div class="image-upload-wrapper">
+                <img id="docImagePreview" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="Preview" class="image-preview-thumb">
+                <div style="flex-grow:1;">
+                  <input type="text" id="docImage" class="form-control" placeholder="Image URL or upload" value="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80">
+                  <label class="upload-file-btn">
+                    <i class="fas fa-upload"></i> Choose Photo from Computer
+                    <input type="file" id="docFileInput" accept="image/*" style="display:none;" onchange="handleImageFileUpload(this, 'docImage', 'docImagePreview')">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px;">
+              <button type="submit" class="btn btn-primary" id="saveDoctorBtn">
+                <i class="fas fa-save"></i> Save Physician
+              </button>
+              <button type="button" class="btn btn-outline" id="cancelDocEditBtn" onclick="resetDoctorForm()" style="display:none;">
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Doctors Table -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Hospital Clinical Board &amp; Physicians</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Photo</th>
+                  <th>Name</th>
+                  <th>Qualifications</th>
+                  <th>Specialty</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="doctorsTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Booking Treatment Options Manager -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Booking Sheet Treatment Options</h3>
+              <p class="card-subtitle">Manage options that appear in the 'Select treatment or concern' dropdown on booking.html and homepage.</p>
+            </div>
+          </div>
+          
+          <div style="display:flex; gap:12px; margin-bottom: 20px;">
+            <input type="text" id="newBookingOptionInput" class="form-control" placeholder="Add new treatment option e.g. Post-Covid Fatigue &amp; Rejuvenation">
+            <button type="button" class="btn btn-primary" onclick="addBookingOption()" style="white-space:nowrap;">
+              <i class="fas fa-plus"></i> Add Option
+            </button>
+          </div>
+
+          <ul id="bookingOptionsList" style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+            <!-- Loaded dynamically -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- TAB 5: APPOINTMENT BOOKINGS -->
+      <section class="tab-panel" id="panel-bookings">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">All Real-Time Appointments</h3>
+              <p class="card-subtitle">Manage status, review consultation modes, and message patients via WhatsApp.</p>
+            </div>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ref ID</th>
+                  <th>Patient Name</th>
+                  <th>WhatsApp / Phone</th>
+                  <th>Date &amp; Time</th>
+                  <th>Doctor</th>
+                  <th>Concern</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="allBookingsTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: OFFERS & NALLAYIL CARE -->
+      <section class="tab-panel" id="panel-offers">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Promotional Offers &amp; Floating Care Banner</h3>
+              <p class="card-subtitle">Smart Logic: The 🎁 Offer button in 'Nallayil Care' only shows when an offer is active.</p>
+            </div>
+          </div>
+
+          <form id="offerForm" onsubmit="event.preventDefault(); saveOfferData();">
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Offer Title *</label>
+                <input type="text" id="offTitle" class="form-control" placeholder="e.g. Monsoon Panchakarma Rejuvenation" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Discount / Benefit Tag *</label>
+                <input type="text" id="offDiscount" class="form-control" placeholder="e.g. 15% Complimentary Session" required>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label class="form-label">Offer Short Description *</label>
+              <textarea id="offDesc" class="form-control" rows="2" placeholder="Avail 15% off on our 14-day residential Panchakarma packages..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Offer Banner Image</label>
+              <div class="image-upload-wrapper">
+                <img id="offImagePreview" src="images/card-wellness.jpg" alt="Preview" class="image-preview-thumb">
+                <div style="flex-grow:1;">
+                  <input type="text" id="offImage" class="form-control" placeholder="images/card-wellness.jpg or URL" value="images/card-wellness.jpg">
+                  <label class="upload-file-btn">
+                    <i class="fas fa-upload"></i> Choose Image from Computer
+                    <input type="file" id="offFileInput" accept="image/*" style="display:none;" onchange="handleImageFileUpload(this, 'offImage', 'offImagePreview')">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Save &amp; Activate Offer
+            </button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Current Offers &amp; Status</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Discount</th>
+                  <th>Status in Nallayil Care</th>
+                  <th>Toggle Active</th>
+                </tr>
+              </thead>
+              <tbody id="offersTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: UPLOAD GALLERY -->
+      <section class="tab-panel" id="panel-gallery">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Add Photo to Hospital Gallery</h3>
+          </div>
+          <form id="galleryUploadForm" onsubmit="event.preventDefault(); saveGalleryPhoto();">
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Photo Title *</label>
+                <input type="text" id="galTitle" class="form-control" placeholder="e.g. Traditional Wooden Dhroni Suite" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category *</label>
+                <select id="galCategory" class="form-control" required>
+                  <option value="Hospital Campus">Hospital Campus</option>
+                  <option value="Therapies">Classical Therapies</option>
+                  <option value="Pharmacy">Ayurvedic Pharmacy</option>
+                  <option value="Rooms">Ayur Home Inpatient Rooms</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Photo (Upload from Computer or URL) *</label>
+              <div class="image-upload-wrapper">
+                <img id="galImagePreview" src="images/about-nallayil.jpg" alt="Preview" class="image-preview-thumb">
+                <div style="flex-grow:1;">
+                  <input type="text" id="galImage" class="form-control" placeholder="images/... or URL" value="images/about-nallayil.jpg" required>
+                  <label class="upload-file-btn">
+                    <i class="fas fa-upload"></i> Choose Photo from Computer
+                    <input type="file" id="galFileInput" accept="image/*" style="display:none;" onchange="handleImageFileUpload(this, 'galImage', 'galImagePreview')">
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Add to Gallery
+            </button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Current Gallery Photos</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Thumbnail</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="galleryTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment Slot | Nallayil Ayurveda Hospital &amp; Ayur Home</title>
+  <meta name="description" content="Book online consultation and OP/IP slots with senior Ayurvedic doctors at Nallayil Ayurveda Manjeri Heritage Hospital.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+
+  <!-- Sticky Navbar -->
+      <!-- Liquid Glass Header -->
+        <!-- Liquid Glass Header -->
+    <!-- Floating Liquid Glass Header with Integrated Smooth Expanding Mobile Menu -->
+        <!-- Floating Liquid Glass Header with Integrated Smooth Expanding Mobile Menu -->
+    <header class="site-header liquid-glass compact-glass" id="navbar">
+      <div class="container nav-container">
+        
+        <!-- Logo with refined arrangement -->
+        <a href="../index.html" class="brand-logo" aria-label="Nallayil Ayurveda Home">
+          <div class="brand-emblem-wrap">
+            <img src="../images/nallayil logo.jpg" onerror="this.onerror=null; this.src='../img/nallayil-logo.jpg';" alt="Nallayil Ayurveda Emblem" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name"><span class="brand-name-part1">NALLAYIL</span> <span class="brand-name-part2">AYURVEDA</span></span>
+            <span class="brand-tagline">HOSPITAL &amp; AYUR HOME • KERALA</span>
+          </div>
+        </a>
+
+        <!-- Slender Clean Menu Links (Desktop) Directly linking to dedicated pages -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="../index.html" class="nav-link ">Home</a>
+          <a href="../about.html" class="nav-link ">About Us</a>
+          <a href="../treatments.html" class="nav-link ">Treatments</a>
+          <a href="../journal.html" class="nav-link ">Ayurveda Journal (Blog)</a>
+          <a href="../contact.html" class="nav-link ">Contact Us</a>
+        </nav>
+
+        <!-- Right Header CTA: Book Now + Animated Hamburger -->
+        <div class="nav-actions">
+          <a href="../booking.html" class="btn btn-header-cta active">
+            Book Now
+          </a>
+          <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+            <span class="hamburger-bar bar-1"></span>
+            <span class="hamburger-bar bar-2"></span>
+            <span class="hamburger-bar bar-3"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Integrated Expanding Mobile Menu (Hidden by default, shown ONLY when hamburger clicked on mobile) -->
+      <div class="mobile-expanded-menu" id="mobileExpandedMenu">
+        <div class="mobile-expanded-divider"></div>
+        <nav class="mobile-expanded-nav" aria-label="Mobile Navigation">
+          <a href="../index.html" class="mobile-nav-link "><span>Home</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../about.html" class="mobile-nav-link "><span>About Us</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../treatments.html" class="mobile-nav-link "><span>Treatments</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../journal.html" class="mobile-nav-link "><span>Ayurveda Journal (Blog)</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="../contact.html" class="mobile-nav-link "><span>Contact Us</span> <i class="fas fa-chevron-right"></i></a>
+        </nav>
+        <div class="mobile-expanded-footer">
+          <a href="https://wa.me/919447638838" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="tel:+919447638838" class="mobile-call-btn">
+            <i class="fas fa-phone-alt"></i> Call Hospital Desk
+          </a>
+        </div>
+      </div>
+    </header><!-- Mobile Drawer -->
+  
+
+  <!-- Header Banner -->
+  <!-- Page Hero (Exact Match to Image 1: Deep Forest Green Luxury Aesthetic) -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-tag">Doctor Consultation &amp; Admissions</span>
+      <h1>Reserve Your Consultation Slot</h1>
+      <p>Direct appointment scheduling with senior Ayurvedic physicians at our flagship Manjeri Heritage Hospital campus.</p>
+    </div>
+  </section>
+
+  <!-- Main Booking Section -->
+  <main style="padding: 40px 0 80px; background-color: #FBFDFB;">
+<section class="consultation-section" id="booking-section">
+      <div class="container">
+        
+        <div class="consultation-card-wrapper reveal">
+          
+          <!-- Header -->
+          <div class="consultation-header">
+            <h2 class="consultation-title">Request a personal consultation</h2>
+            <p class="consultation-subtitle">
+              Choose a preferred time. Reception will confirm availability after you send your request on WhatsApp.
+            </p>
+          </div>
+
+          <form id="consultationBookingForm" class="consultation-form" onsubmit="event.preventDefault(); submitConsultationRequest();">
+            
+            <!-- STEP 1: Select Hospital Center & Doctor -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-heading">
+                <span class="step-badge">1</span>
+                <h3 class="step-title">Select Hospital Center &amp; Doctor</h3>
+              </div>
+
+              <!-- Row 1: 3 Columns -->
+              <div class="wizard-grid-3col">
+                <div class="wizard-field-group">
+                  <label for="consultCenter" class="wizard-label">Select Center *</label>
+                  <div class="wizard-select-wrap">
+                    <select id="consultCenter" class="wizard-select" required>
+                      <option value="Manjeri Heritage Hospital (Mullampara)" selected>Manjeri Heritage Hospital (Mullampara)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="wizard-field-group">
+                  <label for="consultDoctor" class="wizard-label">Doctor / Specialist *</label>
+                  <div class="wizard-select-wrap">
+                    <select id="consultDoctor" class="wizard-select" required>
+                      <option value="Any available specialist" selected>Any available specialist</option>
+                      <option value="Dr. Muhammed Shafi Nallayil (Chief Marma Physician)">Dr. Muhammed Shafi Nallayil (Chief Marma Physician)</option>
+                      <option value="Dr. Fathimath Suhara (Panchakarma &amp; Rejuvenation)">Dr. Fathimath Suhara (Panchakarma &amp; Rejuvenation)</option>
+                      <option value="Dr. Anoop Narayanan (Spine &amp; Joint Rehabilitation)">Dr. Anoop Narayanan (Spine &amp; Joint Rehabilitation)</option>
+                      <option value="Dr. Reshma K. (Classical Lifestyle Medicine)">Dr. Reshma K. (Classical Lifestyle Medicine)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="wizard-field-group">
+                  <label for="consultTreatment" class="wizard-label">Treatment or Concern *</label>
+                  <div class="wizard-select-wrap">
+                                        <select id="consultTreatment" class="wizard-select" required>
+                      <option value="" disabled selected>Select treatment or health concern</option>
+                      <option value="Marma Chikitsa">Marma Chikitsa (മർമ്മ ചികിത്സ - Spine &amp; Vital Points)</option>
+                      <option value="Spine and Disc Care">Non-Surgical Spine &amp; Disc Care (Sciatica / Lumbar)</option>
+                      <option value="Classical Panchakarma Detox">Classical Panchakarma Detox (14-21 Days)</option>
+                      <option value="Arthritis and Joint Care">Joint &amp; Arthritis Care (Janu Vasthi / Kizhi)</option>
+                      <option value="Stroke and Neuro Rehab">Stroke &amp; Neurological Rehabilitation</option>
+                      <option value="Shirodhara Mind Therapy">Stress, Insomnia &amp; Shirodhara Mind Therapy</option>
+                      <option value="Wellness Treatments">Wellness Therapies (Abhyanga &amp; Rejuvenation)</option>
+                      <option value="Beauty Treatments">Botanical Beauty Treatments (Mukha Lepam)</option>
+                      <option value="Post-Natal Rejuvenation">Post-Natal Rejuvenation (Prasava Raksha)</option>
+                      <option value="OP Consultation">Outpatient Doctor Consultation (OP Clinic)</option>
+                      <option value="General Health & Immunity">General Health &amp; Immunity Consultation</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: 2 Columns -->
+              <div class="wizard-grid-2col">
+                <div class="wizard-field-group">
+                  <label for="consultMode" class="wizard-label">Consultation Mode *</label>
+                  <div class="wizard-select-wrap">
+                    <select id="consultMode" class="wizard-select" required>
+                      <option value="In-Clinic Outpatient Visit (OP)" selected>In-Clinic Outpatient Visit (OP)</option>
+                      <option value="Inpatient Admission Inquiry (IP)">Inpatient Admission Inquiry (IP)</option>
+                      <option value="Online Video Consultation (WhatsApp)">Online Video Consultation (WhatsApp)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="wizard-field-group">
+                  <label for="consultDate" class="wizard-label">Date of Appointment *</label>
+                  <div class="wizard-input-wrap">
+                    <input type="date" id="consultDate" class="wizard-input date-input" value="2026-09-30" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Preferred Time * -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-heading">
+                <span class="step-badge">2</span>
+                <h3 class="step-title">Preferred Time *</h3>
+              </div>
+              <input type="hidden" id="selectedConsultTime" value="09:00 AM - 09:45 AM" required>
+
+              <!-- Morning Consultation -->
+              <div class="time-period-group">
+                <span class="period-label">Morning consultation</span>
+                <div class="time-slots-row">
+                  <button type="button" class="slot-pill active" onclick="selectSlot(this, '09:00 AM - 09:45 AM')">09:00 AM - 09:45 AM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '09:45 AM - 10:30 AM')">09:45 AM - 10:30 AM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '10:30 AM - 11:15 AM')">10:30 AM - 11:15 AM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '11:15 AM - 12:00 PM')">11:15 AM - 12:00 PM</button>
+                </div>
+              </div>
+
+              <!-- Afternoon Consultation -->
+              <div class="time-period-group">
+                <span class="period-label">Afternoon consultation</span>
+                <div class="time-slots-row">
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '02:30 PM - 03:15 PM')">02:30 PM - 03:15 PM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '03:15 PM - 04:00 PM')">03:15 PM - 04:00 PM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '04:00 PM - 04:45 PM')">04:00 PM - 04:45 PM</button>
+                </div>
+              </div>
+
+              <!-- Evening Consultation -->
+              <div class="time-period-group">
+                <span class="period-label">Evening consultation</span>
+                <div class="time-slots-row">
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '05:15 PM - 06:00 PM')">05:15 PM - 06:00 PM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '06:00 PM - 06:45 PM')">06:00 PM - 06:45 PM</button>
+                  <button type="button" class="slot-pill" onclick="selectSlot(this, '06:45 PM - 07:30 PM')">06:45 PM - 07:30 PM</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Patient Contact Details -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-heading">
+                <span class="step-badge">3</span>
+                <h3 class="step-title">Patient Contact Details</h3>
+              </div>
+
+              <div class="wizard-grid-2col">
+                <div class="wizard-field-group">
+                  <label for="consultName" class="wizard-label">Patient Full Name *</label>
+                  <input type="text" id="consultName" class="wizard-input" placeholder="Enter patient's name" required>
+                </div>
+
+                <div class="wizard-field-group">
+                  <label for="consultPhone" class="wizard-label">Mobile Number (WhatsApp) *</label>
+                  <input type="tel" id="consultPhone" class="wizard-input" placeholder="e.g. +91 99610 03718" required>
+                </div>
+              </div>
+
+              <!-- Privacy Notice Note Box -->
+              <div class="wizard-privacy-box">
+                <p>Your details stay on this page until you choose to share them on WhatsApp. Only the appointment details needed by reception are included; please discuss medical reports directly with your physician.</p>
+              </div>
+
+              <!-- Review & Submit Button -->
+              <div class="wizard-submit-center">
+                <button type="submit" class="btn-review-appointment" id="reviewAppointmentBtn">
+                  Review Appointment Request
+                </button>
+                <p class="wizard-footer-hint">
+                  No payment is collected online. Reception will confirm the consultation details.
+                </p>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+</main>
+
+  <!-- Booking Confirmation Slip Modal -->
+  <!-- Booking Receipt / Confirmation Modal -->
+  <div class="modal" id="booking-receipt-modal" role="dialog" aria-modal="true" aria-labelledby="receipt-title">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 id="receipt-title" style="display:flex; align-items:center; gap:10px;">
+          <i class="fas fa-check-circle" style="color:var(--primary-deep);"></i> Appointment Confirmed
+        </h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background:var(--bg-soft); border:1px solid var(--border-green); border-radius:12px; padding:24px; margin-bottom:24px; font-size:0.95rem; line-height:1.8;">
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:8px; margin-bottom:12px;">
+            <span style="color:var(--text-muted); font-size:0.85rem;">BOOKING REFERENCE</span>
+            <strong id="receipt-ref" style="color:var(--primary-deep); font-family:monospace; font-size:1.05rem;"></strong>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">PATIENT</span><strong id="receipt-patient"></strong></div>
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">PHONE</span><strong id="receipt-phone"></strong></div>
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">HOSPITAL BRANCH</span><strong id="receipt-branch"></strong></div>
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">PHYSICIAN</span><strong id="receipt-doctor"></strong></div>
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">PROGRAM / CONCERN</span><strong id="receipt-treatment"></strong></div>
+            <div><span style="color:var(--text-muted); font-size:0.82rem; display:block;">DATE &amp; TIME</span><strong id="receipt-datetime" style="color:var(--primary-deep);"></strong></div>
+            <div style="grid-column:span 2;"><span style="color:var(--text-muted); font-size:0.82rem; display:block;">CONSULTATION MODE</span><strong id="receipt-mode"></strong></div>
+          </div>
+        </div>
+        <div class="btn-group" style="justify-content:center;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="printBookingReceipt()">
+            <i class="fas fa-print"></i> Print Confirmation
+          </button>
+          <a href="#" id="receipt-whatsapp-btn" target="_blank" class="btn btn-whatsapp btn-sm">
+            <i class="fab fa-whatsapp"></i> Share to WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer (NO ADMIN / STAFF LINKS) -->
+      <!-- Footer -->
+    
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/booking.js"></script>
+    <!-- ======================================================================
+         SECTION 9 — PREMIER AYURVEDA FOOTER (UPDATED SPECIFICATION)
+         ====================================================================== -->
+    <footer class="site-footer-v2">
+      <div class="container">
+        
+        <!-- 4-Column Split Layout -->
+        <div class="footer-v2-grid">
+          
+          <!-- Column 1 — Nallayil Ayurveda -->
+          <div class="footer-v2-col">
+            <a href="../index.html" class="footer-v2-brand-logo">
+              <div class="footer-v2-emblem">
+                <img src="../images/nallayil logo.jpg" onerror="this.onerror=null; this.src='../img/nallayil-logo.jpg';" alt="Nallayil Ayurveda" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div>
+                <div class="footer-v2-brand-title">Nallayil Ayurveda</div>
+                <div class="footer-v2-brand-sub">Hospital &amp; Ayur Home • Kerala</div>
+              </div>
+            </a>
+            <p class="footer-v2-statement">
+              “Rooted in Kerala’s Ayurvedic tradition, Nallayil Ayurveda brings authentic healing and personalised care for modern well-being.”
+            </p>
+            <div class="footer-v2-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2 — Quick Links -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Quick Links</h4>
+            <ul class="footer-v2-links">
+              <li><a href="../about.html" class="footer-v2-link">About Us</a></li>
+              <li><a href="../treatments.html" class="footer-v2-link">Treatments</a></li>
+              <li><a href="../journal.html" class="footer-v2-link">Ayurveda Journal</a></li>
+              <li><a href="javascript:void(0)" onclick="openCareOfferModal()" class="footer-v2-link">Offers &amp; Updates</a></li>
+              <li><a href="../contact.html" class="footer-v2-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 — Treatments (CMS-driven list) -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Treatments</h4>
+            <ul class="footer-v2-links" id="footerTreatmentsList">
+              <li><a href="../treatments.html#panchakarma" class="footer-v2-link">Panchakarma Detox</a></li>
+              <li><a href="../treatments.html#abhyanga" class="footer-v2-link">Abhyanga Full-Body Rejuvenation</a></li>
+              <li><a href="../treatments.html#shirodhara" class="footer-v2-link">Shirodhara Mind Therapy</a></li>
+              <li><a href="../treatments.html#kizhi" class="footer-v2-link">Kizhi &amp; Potali Joint Care</a></li>
+              <li><a href="../treatments.html#marma" class="footer-v2-link">Marma Spine &amp; Disc Care</a></li>
+            </ul>
+            <a href="../treatments.html" class="footer-v2-cta-link">
+              <span>View All Treatments</span> <span style="font-size:1.1rem;">→</span>
+            </a>
+          </div>
+
+          <!-- Column 4 — Contact -->
+          <div class="footer-v2-col">
+            <h4 class="footer-v2-heading">Contact</h4>
+            <ul class="footer-v2-contact-list">
+              <li class="footer-v2-contact-item">
+                <i class="far fa-calendar-check"></i>
+                <div>
+                  <a href="../contact.html#booking-sheet" style="font-weight:600; color:#4ADE80;">Book an Appointment → Booking Sheet</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <a href="https://maps.google.com/?q=NALLAYIL+AYUREDA+HERITAGE" target="_blank" rel="noopener noreferrer">Mullampara, Manjeri, Malappuram, Kerala 676121 (Google Maps)</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <a href="tel:+919447638838">+91 94476 38838</a> / <a href="tel:+919961003718">+91 99610 03718</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more" target="_blank" rel="noopener noreferrer">WhatsApp Chat Support</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-envelope"></i>
+                <div>
+                  <a href="mailto:care@nallayilayurveda.com">care@nallayilayurveda.com</a>
+                </div>
+              </li>
+              <li class="footer-v2-contact-item">
+                <i class="far fa-clock"></i>
+                <div>
+                  Mon - Sun: 08:30 AM - 08:00 PM<br>
+                  <span style="font-size:0.8rem; color:#4ADE80;">24/7 Round the Clock In-Patient Care</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom Bar (Left, Center, Right) -->
+        <div class="footer-v2-bottom-bar">
+          <div class="footer-v2-bottom-grid">
+            <div class="footer-v2-copy">
+              &copy; 2026 Nallayil Ayurveda. All Rights Reserved.
+            </div>
+            <div class="footer-v2-legal">
+              <a href="../contact.html">Privacy Policy</a> | <a href="../contact.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-v2-brandb-credit">
+              Website crafted by <span>Brand B</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Very Bottom Line -->
+        <div class="footer-v2-very-bottom">
+          Made with care for better well-being. 🌿
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- ======================================================================
+         🌿 NALLAYIL CARE — FLOATING UI SYSTEM
+         ====================================================================== -->
+    <div class="nallayil-care-widget" id="nallayilCareWidget">
+      
+      <!-- Expanded Menu Items (Appear vertically above trigger) -->
+      <div class="nallayil-care-menu" id="nallayilCareMenu">
+        
+        <!-- Smart Offer Button (Rendered only when active offer exists in CMS) -->
+        <button type="button" class="care-action-btn btn-act-offer" id="careOfferBtn" onclick="openCareOfferModal()" style="display:none;">
+          <i class="fas fa-gift"></i>
+          <span>Offer <span class="care-offer-pulse">NEW</span></span>
+        </button>
+
+        <!-- Call Button -->
+        <a href="tel:+919447638838" class="care-action-btn btn-act-call" onclick="closeCareMenu()">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Desk</span>
+        </a>
+
+        <!-- Book Appointment Button -->
+        <a href="../contact.html#booking-sheet" class="care-action-btn btn-act-book" onclick="closeCareMenu()">
+          <i class="far fa-calendar-check"></i>
+          <span>Book Appointment</span>
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919447638838?text=Hi%20Nallayil%20Ayurveda,%20I%20would%20like%20to%20know%20more%20about%20treatments" target="_blank" rel="noopener noreferrer" class="care-action-btn btn-act-wa" onclick="closeCareMenu()">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp Chat</span>
+        </a>
+
+      </div>
+
+      <!-- Main Floating Action Trigger Button (Bottom-Right Fixed) -->
+      <button type="button" class="nallayil-care-trigger" id="nallayilCareTrigger" onclick="toggleCareMenu()" aria-label="Toggle Nallayil Care Menu">
+        <div class="care-headset-icon">
+          <i class="fas fa-headset" id="careTriggerIcon"></i>
+        </div>
+        <div class="care-trigger-text">
+          <span class="care-brand-tag">Support &amp; Booking</span>
+          <span class="care-title">Nallayil Care</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Smart Offer Modal / Bottom Sheet -->
+    <div class="care-offer-modal-overlay" id="careOfferModalOverlay" onclick="handleOfferOverlayClick(event)">
+      <div class="care-offer-card" id="careOfferCard">
+        <button type="button" class="care-offer-close" onclick="closeCareOfferModal()" aria-label="Close Offer">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="care-offer-media" id="careOfferMedia">
+          <img src="../images/card-wellness.jpg" alt="Special Ayurvedic Offer" id="careOfferImg">
+        </div>
+        <div class="care-offer-body">
+          <span class="care-offer-badge">SPECIAL OFFER</span>
+          <h3 class="care-offer-title" id="careOfferTitle">Monsoon Panchakarma Rejuvenation</h3>
+          <p class="care-offer-desc" id="careOfferDesc">
+            Avail 15% complimentary wellness enhancement on our classical 14-day residential Panchakarma packages at Manjeri Ayur Home.
+          </p>
+          <a href="../contact.html#booking-sheet" class="care-offer-cta" onclick="closeCareOfferModal()">
+            <span>Book Your Offer Slot</span> <span style="font-size:1.1rem;">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
